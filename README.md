@@ -1,3 +1,3 @@
-# smart_ledger_ai
+# SmartLedger.ai
 
 A new Flutter project.
