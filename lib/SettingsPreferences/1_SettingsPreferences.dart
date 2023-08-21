@@ -1,36 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class SettingsPreferences extends StatelessWidget {
+class SettingsPreferences extends StatefulWidget {
   const SettingsPreferences({super.key});
 
   @override
+  State<SettingsPreferences> createState() => _SettingsPreferences();
+}
+
+class _SettingsPreferences extends State<SettingsPreferences> {
   Widget build(BuildContext context) {
     return DefaultTabController(
       length: 3,
       child: Scaffold(
         appBar: AppBar(
           iconTheme: const IconThemeData(color: Colors.black),
-          // title: Row(
-          //   children: [
-          //     Text(
-          //       'Box',
-          //       style: GoogleFonts.plusJakartaSans(
-          //         color: const Color(0xFF040404),
-          //         fontSize: 16,
-          //         fontWeight: FontWeight.bold,
-          //       ),
-          //     ),
-          //     Text(
-          //       'ERP',
-          //       style: GoogleFonts.plusJakartaSans(
-          //         color: const Color(0xFF2C3A76),
-          //         fontSize: 16,
-          //         fontWeight: FontWeight.bold,
-          //       ),
-          //     ),
-          //   ],
-          // ),
           actions: <Widget>[
             Row(
               children: [
