@@ -7,8 +7,6 @@ import 'package:smart_ledger_ai/GettingStarted/7_BranchDivision.dart';
 import 'package:smart_ledger_ai/Masterlist/1_CustomerImportImage.dart';
 import 'package:smart_ledger_ai/Dashboard/MainDashboard.dart';
 import 'package:smart_ledger_ai/PurchasesAPV/1_PurchasesAPV.dart';
-import 'package:smart_ledger_ai/PurchasesAPV/test.dart';
-import 'package:smart_ledger_ai/PurchasesAPV/testssssssss.dart';
 import 'package:smart_ledger_ai/SettingsPreferences/1_SettingsPreferences.dart';
 
 import 'Registration/LoginScreen.dart';

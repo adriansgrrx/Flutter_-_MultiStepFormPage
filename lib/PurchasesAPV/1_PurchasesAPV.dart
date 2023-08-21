@@ -412,45 +412,61 @@ class _PurchasesAPV extends State<PurchasesAPV> {
                     ],
                   ),
                 ),
-                Container(
-                  width: 150,
-                  child: Padding(
-                    padding: const EdgeInsets.only(
-                        top: 10.0, left: 25.0, right: 25.0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.only(bottom: 10.0),
-                          child: Row(
-                            children: [
-                              Text(
-                                'Due Date',
-                                style: GoogleFonts.plusJakartaSans(
-                                  color: const Color(0xFF010A10),
-                                  fontSize: 10.0,
-                                ),
+                Padding(
+                  padding:
+                      const EdgeInsets.only(top: 10.0, left: 25.0, right: 25.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(bottom: 10.0),
+                        child: Row(
+                          children: [
+                            Text(
+                              'Due Date',
+                              style: GoogleFonts.plusJakartaSans(
+                                color: const Color(0xFF010A10),
+                                fontSize: 10.0,
                               ),
-                            ],
-                          ),
-                        ),
-                        Container(
-                          padding: const EdgeInsets.symmetric(horizontal: 10.0),
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            border: Border.all(color: const Color(0x1a010a10)),
-                            borderRadius: BorderRadius.circular(10.0),
-                          ),
-                          child: const TextField(
-                            decoration: InputDecoration(
-                              border: InputBorder.none,
-                              contentPadding:
-                                  EdgeInsets.symmetric(horizontal: 10),
                             ),
-                          ),
+                          ],
                         ),
-                      ],
-                    ),
+                      ),
+                      Container(
+                        width: 150,
+                        padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          border: Border.all(color: const Color(0x1a010a10)),
+                          borderRadius: BorderRadius.circular(10.0),
+                        ),
+                        child: DropdownButton<String>(
+                          isExpanded: true,
+                          underline: Container(),
+                          icon: const Icon(Icons.arrow_drop_down,
+                              color: Color(0x1a010a10)),
+                          items: <String>[
+                            'Option 1',
+                            'Option 2',
+                            'Option 3',
+                            'Option 4',
+                          ].map((String value) {
+                            return DropdownMenuItem<String>(
+                              value: value,
+                              child: Row(
+                                children: [
+                                  const SizedBox(width: 10),
+                                  Text(value),
+                                ],
+                              ),
+                            );
+                          }).toList(),
+                          onChanged: (String? newValue) {
+                            // Handle selection
+                          },
+                        ),
+                      ),
+                    ],
                   ),
                 ),
                 Padding(
