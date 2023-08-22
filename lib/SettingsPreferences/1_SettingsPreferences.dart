@@ -211,515 +211,523 @@ class _SettingsPreferences extends State<SettingsPreferences> {
           children: [
             // Content of Tab 1
             Center(
-                child: Column(
-              children: [
-                Expanded(
-                  child: GestureDetector(
-                    onVerticalDragUpdate: (details) {
-                      // Handle vertical drag to simulate scrolling
-                    },
-                    child: Container(
-                      constraints: BoxConstraints(
-                        minHeight: MediaQuery.of(context).size.height -
-                            100.0, // Minimum height
-                      ),
-                      child: SingleChildScrollView(
-                        child: Column(
-                          children: [
-                            // Scrollable content
-                            SizedBox(
-                              height: 600.0, // Example content height
-                              child: Column(
-                                children: [
-                                  Padding(
-                                    padding: const EdgeInsets.only(
-                                        top: 25.0, left: 25.0, right: 25.0),
-                                    child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Padding(
-                                          padding: const EdgeInsets.only(
-                                              bottom: 10.0),
-                                          child: Row(
-                                            children: [
-                                              Text(
-                                                'Date',
-                                                style:
-                                                    GoogleFonts.plusJakartaSans(
-                                                  color:
-                                                      const Color(0xFF010A10),
-                                                  fontSize: 10.0,
-                                                ),
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                        Container(
-                                          width: 150,
-                                          padding: const EdgeInsets.symmetric(
-                                              horizontal: 10.0),
-                                          decoration: BoxDecoration(
-                                            color: Colors.white,
-                                            border: Border.all(
-                                                color: const Color(0x1a010a10)),
-                                            borderRadius:
-                                                BorderRadius.circular(10.0),
-                                          ),
-                                          child: DropdownButton<String>(
-                                            isExpanded: true,
-                                            underline: Container(),
-                                            icon: const Icon(
-                                                Icons.arrow_drop_down,
-                                                color: Color(0x1a010a10)),
-                                            items: <String>[
-                                              'Option 1',
-                                              'Option 2',
-                                              'Option 3',
-                                              'Option 4',
-                                            ].map((String value) {
-                                              return DropdownMenuItem<String>(
-                                                value: value,
-                                                child: Row(
-                                                  children: [
-                                                    const SizedBox(width: 10),
-                                                    Text(value),
-                                                  ],
-                                                ),
-                                              );
-                                            }).toList(),
-                                            onChanged: (String? newValue) {
-                                              // Handle selection
-                                            },
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.only(
-                                        top: 10.0, left: 25.0, right: 25.0),
-                                    child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Padding(
-                                          padding: const EdgeInsets.only(
-                                              bottom: 10.0),
-                                          child: Row(
-                                            children: [
-                                              Text(
-                                                'Accounts Payable',
-                                                style:
-                                                    GoogleFonts.plusJakartaSans(
-                                                  color:
-                                                      const Color(0xFF010A10),
-                                                  fontSize: 10.0,
-                                                ),
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                        Container(
-                                          padding: const EdgeInsets.symmetric(
-                                              horizontal: 10.0),
-                                          decoration: BoxDecoration(
-                                            color: Colors.white,
-                                            border: Border.all(
-                                                color: const Color(0x1a010a10)),
-                                            borderRadius:
-                                                BorderRadius.circular(10.0),
-                                          ),
-                                          child: DropdownButton<String>(
-                                            isExpanded: true,
-                                            underline: Container(),
-                                            icon: const Icon(
-                                                Icons.arrow_drop_down,
-                                                color: Color(0x1a010a10)),
-                                            items: <String>[
-                                              'Option 1',
-                                              'Option 2',
-                                              'Option 3',
-                                              'Option 4',
-                                            ].map((String value) {
-                                              return DropdownMenuItem<String>(
-                                                value: value,
-                                                child: Row(
-                                                  children: [
-                                                    const SizedBox(width: 10),
-                                                    Text(value),
-                                                  ],
-                                                ),
-                                              );
-                                            }).toList(),
-                                            onChanged: (String? newValue) {
-                                              // Handle selection
-                                            },
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.only(
-                                        top: 10.0, left: 25.0, right: 25.0),
-                                    child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Padding(
-                                          padding: const EdgeInsets.only(
-                                              bottom: 10.0),
-                                          child: Row(
-                                            children: [
-                                              Text(
-                                                'Accounts Receivable',
-                                                style:
-                                                    GoogleFonts.plusJakartaSans(
-                                                  color:
-                                                      const Color(0xFF010A10),
-                                                  fontSize: 10.0,
-                                                ),
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                        Container(
-                                          padding: const EdgeInsets.symmetric(
-                                              horizontal: 10.0),
-                                          decoration: BoxDecoration(
-                                            color: Colors.white,
-                                            border: Border.all(
-                                                color: const Color(0x1a010a10)),
-                                            borderRadius:
-                                                BorderRadius.circular(10.0),
-                                          ),
-                                          child: DropdownButton<String>(
-                                            isExpanded: true,
-                                            underline: Container(),
-                                            icon: const Icon(
-                                                Icons.arrow_drop_down,
-                                                color: Color(0x1a010a10)),
-                                            items: <String>[
-                                              'Option 1',
-                                              'Option 2',
-                                              'Option 3',
-                                              'Option 4',
-                                            ].map((String value) {
-                                              return DropdownMenuItem<String>(
-                                                value: value,
-                                                child: Row(
-                                                  children: [
-                                                    const SizedBox(width: 10),
-                                                    Text(value),
-                                                  ],
-                                                ),
-                                              );
-                                            }).toList(),
-                                            onChanged: (String? newValue) {
-                                              // Handle selection
-                                            },
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.only(
-                                        top: 10.0, left: 25.0, right: 25.0),
-                                    child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Padding(
-                                          padding: const EdgeInsets.only(
-                                              bottom: 10.0),
-                                          child: Row(
-                                            children: [
-                                              Text(
-                                                'Employee Advance',
-                                                style:
-                                                    GoogleFonts.plusJakartaSans(
-                                                  color:
-                                                      const Color(0xFF010A10),
-                                                  fontSize: 10.0,
-                                                ),
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                        Container(
-                                          padding: const EdgeInsets.symmetric(
-                                              horizontal: 10.0),
-                                          decoration: BoxDecoration(
-                                            color: Colors.white,
-                                            border: Border.all(
-                                                color: const Color(0x1a010a10)),
-                                            borderRadius:
-                                                BorderRadius.circular(10.0),
-                                          ),
-                                          child: DropdownButton<String>(
-                                            isExpanded: true,
-                                            underline: Container(),
-                                            icon: const Icon(
-                                                Icons.arrow_drop_down,
-                                                color: Color(0x1a010a10)),
-                                            items: <String>[
-                                              'Option 1',
-                                              'Option 2',
-                                              'Option 3',
-                                              'Option 4',
-                                            ].map((String value) {
-                                              return DropdownMenuItem<String>(
-                                                value: value,
-                                                child: Row(
-                                                  children: [
-                                                    const SizedBox(width: 10),
-                                                    Text(value),
-                                                  ],
-                                                ),
-                                              );
-                                            }).toList(),
-                                            onChanged: (String? newValue) {
-                                              // Handle selection
-                                            },
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.only(
-                                        top: 10.0, left: 25.0, right: 25.0),
-                                    child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Padding(
-                                          padding: const EdgeInsets.only(
-                                              bottom: 10.0),
-                                          child: Row(
-                                            children: [
-                                              Text(
-                                                'Petty Cash',
-                                                style:
-                                                    GoogleFonts.plusJakartaSans(
-                                                  color:
-                                                      const Color(0xFF010A10),
-                                                  fontSize: 10.0,
-                                                ),
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                        Container(
-                                          padding: const EdgeInsets.symmetric(
-                                              horizontal: 10.0),
-                                          decoration: BoxDecoration(
-                                            color: Colors.white,
-                                            border: Border.all(
-                                                color: const Color(0x1a010a10)),
-                                            borderRadius:
-                                                BorderRadius.circular(10.0),
-                                          ),
-                                          child: DropdownButton<String>(
-                                            isExpanded: true,
-                                            underline: Container(),
-                                            icon: const Icon(
-                                                Icons.arrow_drop_down,
-                                                color: Color(0x1a010a10)),
-                                            items: <String>[
-                                              'Option 1',
-                                              'Option 2',
-                                              'Option 3',
-                                              'Option 4',
-                                            ].map((String value) {
-                                              return DropdownMenuItem<String>(
-                                                value: value,
-                                                child: Row(
-                                                  children: [
-                                                    const SizedBox(width: 10),
-                                                    Text(value),
-                                                  ],
-                                                ),
-                                              );
-                                            }).toList(),
-                                            onChanged: (String? newValue) {
-                                              // Handle selection
-                                            },
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.only(
-                                        top: 10.0, left: 25.0, right: 25.0),
-                                    child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Padding(
-                                          padding: const EdgeInsets.only(
-                                              bottom: 10.0),
-                                          child: Row(
-                                            children: [
-                                              Text(
-                                                'Default Bank',
-                                                style:
-                                                    GoogleFonts.plusJakartaSans(
-                                                  color:
-                                                      const Color(0xFF010A10),
-                                                  fontSize: 10.0,
-                                                ),
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                        Container(
-                                          padding: const EdgeInsets.symmetric(
-                                              horizontal: 10.0),
-                                          decoration: BoxDecoration(
-                                            color: Colors.white,
-                                            border: Border.all(
-                                                color: const Color(0x1a010a10)),
-                                            borderRadius:
-                                                BorderRadius.circular(10.0),
-                                          ),
-                                          child: DropdownButton<String>(
-                                            isExpanded: true,
-                                            underline: Container(),
-                                            icon: const Icon(
-                                                Icons.arrow_drop_down,
-                                                color: Color(0x1a010a10)),
-                                            items: <String>[
-                                              'Option 1',
-                                              'Option 2',
-                                              'Option 3',
-                                              'Option 4',
-                                            ].map((String value) {
-                                              return DropdownMenuItem<String>(
-                                                value: value,
-                                                child: Row(
-                                                  children: [
-                                                    const SizedBox(width: 10),
-                                                    Text(value),
-                                                  ],
-                                                ),
-                                              );
-                                            }).toList(),
-                                            onChanged: (String? newValue) {
-                                              // Handle selection
-                                            },
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.only(
-                                        top: 10.0, left: 25.0, right: 25.0),
-                                    child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Padding(
-                                          padding: const EdgeInsets.only(
-                                              bottom: 10.0),
-                                          child: Row(
-                                            children: [
-                                              Text(
-                                                'Deffered Purchase',
-                                                style:
-                                                    GoogleFonts.plusJakartaSans(
-                                                  color:
-                                                      const Color(0xFF010A10),
-                                                  fontSize: 10.0,
-                                                ),
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                        Container(
-                                          padding: const EdgeInsets.symmetric(
-                                              horizontal: 10.0),
-                                          decoration: BoxDecoration(
-                                            color: Colors.white,
-                                            border: Border.all(
-                                                color: const Color(0x1a010a10)),
-                                            borderRadius:
-                                                BorderRadius.circular(10.0),
-                                          ),
-                                          child: DropdownButton<String>(
-                                            isExpanded: true,
-                                            underline: Container(),
-                                            icon: const Icon(
-                                                Icons.arrow_drop_down,
-                                                color: Color(0x1a010a10)),
-                                            items: <String>[
-                                              'Option 1',
-                                              'Option 2',
-                                              'Option 3',
-                                              'Option 4',
-                                            ].map((String value) {
-                                              return DropdownMenuItem<String>(
-                                                value: value,
-                                                child: Row(
-                                                  children: [
-                                                    const SizedBox(width: 10),
-                                                    Text(value),
-                                                  ],
-                                                ),
-                                              );
-                                            }).toList(),
-                                            onChanged: (String? newValue) {
-                                              // Handle selection
-                                            },
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-                Align(
-                  alignment: Alignment.bottomRight,
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 27.0, vertical: 42.0),
-                    child: ElevatedButton(
-                      onPressed: () {
-                        // Handle button press
+              child: Column(
+                children: [
+                  Expanded(
+                    child: GestureDetector(
+                      onVerticalDragUpdate: (details) {
+                        // Handle vertical drag to simulate scrolling
                       },
-                      style: ElevatedButton.styleFrom(
-                        fixedSize: const Size(80, 27),
-                        backgroundColor:
-                            const Color(0xFF2C3A76), // Change button color
-                        shape: RoundedRectangleBorder(
-                          borderRadius:
-                              BorderRadius.circular(7.0), // Adjust the radius
+                      child: Container(
+                        constraints: BoxConstraints(
+                          minHeight: MediaQuery.of(context).size.height -
+                              100.0, // Minimum height
                         ),
-                      ),
-                      child: Text(
-                        'Save',
-                        style: GoogleFonts.plusJakartaSans(
-                          color: Colors.white,
-                          fontWeight: FontWeight.w700,
-                          fontSize: 10.0,
+                        child: SingleChildScrollView(
+                          child: Column(
+                            children: [
+                              // Scrollable content
+                              SizedBox(
+                                height: 600.0, // Example content height
+                                child: Column(
+                                  children: [
+                                    Padding(
+                                      padding: const EdgeInsets.only(
+                                          top: 25.0, left: 25.0, right: 25.0),
+                                      child: Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Padding(
+                                            padding: const EdgeInsets.only(
+                                                bottom: 10.0),
+                                            child: Row(
+                                              children: [
+                                                Text(
+                                                  'Date',
+                                                  style: GoogleFonts
+                                                      .plusJakartaSans(
+                                                    color:
+                                                        const Color(0xFF010A10),
+                                                    fontSize: 10.0,
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                          Container(
+                                            width: 150,
+                                            padding: const EdgeInsets.symmetric(
+                                                horizontal: 10.0),
+                                            decoration: BoxDecoration(
+                                              color: Colors.white,
+                                              border: Border.all(
+                                                  color:
+                                                      const Color(0x1a010a10)),
+                                              borderRadius:
+                                                  BorderRadius.circular(10.0),
+                                            ),
+                                            child: DropdownButton<String>(
+                                              isExpanded: true,
+                                              underline: Container(),
+                                              icon: const Icon(
+                                                  Icons.arrow_drop_down,
+                                                  color: Color(0x1a010a10)),
+                                              items: <String>[
+                                                'Option 1',
+                                                'Option 2',
+                                                'Option 3',
+                                                'Option 4',
+                                              ].map((String value) {
+                                                return DropdownMenuItem<String>(
+                                                  value: value,
+                                                  child: Row(
+                                                    children: [
+                                                      const SizedBox(width: 10),
+                                                      Text(value),
+                                                    ],
+                                                  ),
+                                                );
+                                              }).toList(),
+                                              onChanged: (String? newValue) {
+                                                // Handle selection
+                                              },
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.only(
+                                          top: 10.0, left: 25.0, right: 25.0),
+                                      child: Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Padding(
+                                            padding: const EdgeInsets.only(
+                                                bottom: 10.0),
+                                            child: Row(
+                                              children: [
+                                                Text(
+                                                  'Accounts Payable',
+                                                  style: GoogleFonts
+                                                      .plusJakartaSans(
+                                                    color:
+                                                        const Color(0xFF010A10),
+                                                    fontSize: 10.0,
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                          Container(
+                                            padding: const EdgeInsets.symmetric(
+                                                horizontal: 10.0),
+                                            decoration: BoxDecoration(
+                                              color: Colors.white,
+                                              border: Border.all(
+                                                  color:
+                                                      const Color(0x1a010a10)),
+                                              borderRadius:
+                                                  BorderRadius.circular(10.0),
+                                            ),
+                                            child: DropdownButton<String>(
+                                              isExpanded: true,
+                                              underline: Container(),
+                                              icon: const Icon(
+                                                  Icons.arrow_drop_down,
+                                                  color: Color(0x1a010a10)),
+                                              items: <String>[
+                                                'Option 1',
+                                                'Option 2',
+                                                'Option 3',
+                                                'Option 4',
+                                              ].map((String value) {
+                                                return DropdownMenuItem<String>(
+                                                  value: value,
+                                                  child: Row(
+                                                    children: [
+                                                      const SizedBox(width: 10),
+                                                      Text(value),
+                                                    ],
+                                                  ),
+                                                );
+                                              }).toList(),
+                                              onChanged: (String? newValue) {
+                                                // Handle selection
+                                              },
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.only(
+                                          top: 10.0, left: 25.0, right: 25.0),
+                                      child: Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Padding(
+                                            padding: const EdgeInsets.only(
+                                                bottom: 10.0),
+                                            child: Row(
+                                              children: [
+                                                Text(
+                                                  'Accounts Receivable',
+                                                  style: GoogleFonts
+                                                      .plusJakartaSans(
+                                                    color:
+                                                        const Color(0xFF010A10),
+                                                    fontSize: 10.0,
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                          Container(
+                                            padding: const EdgeInsets.symmetric(
+                                                horizontal: 10.0),
+                                            decoration: BoxDecoration(
+                                              color: Colors.white,
+                                              border: Border.all(
+                                                  color:
+                                                      const Color(0x1a010a10)),
+                                              borderRadius:
+                                                  BorderRadius.circular(10.0),
+                                            ),
+                                            child: DropdownButton<String>(
+                                              isExpanded: true,
+                                              underline: Container(),
+                                              icon: const Icon(
+                                                  Icons.arrow_drop_down,
+                                                  color: Color(0x1a010a10)),
+                                              items: <String>[
+                                                'Option 1',
+                                                'Option 2',
+                                                'Option 3',
+                                                'Option 4',
+                                              ].map((String value) {
+                                                return DropdownMenuItem<String>(
+                                                  value: value,
+                                                  child: Row(
+                                                    children: [
+                                                      const SizedBox(width: 10),
+                                                      Text(value),
+                                                    ],
+                                                  ),
+                                                );
+                                              }).toList(),
+                                              onChanged: (String? newValue) {
+                                                // Handle selection
+                                              },
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.only(
+                                          top: 10.0, left: 25.0, right: 25.0),
+                                      child: Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Padding(
+                                            padding: const EdgeInsets.only(
+                                                bottom: 10.0),
+                                            child: Row(
+                                              children: [
+                                                Text(
+                                                  'Employee Advance',
+                                                  style: GoogleFonts
+                                                      .plusJakartaSans(
+                                                    color:
+                                                        const Color(0xFF010A10),
+                                                    fontSize: 10.0,
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                          Container(
+                                            padding: const EdgeInsets.symmetric(
+                                                horizontal: 10.0),
+                                            decoration: BoxDecoration(
+                                              color: Colors.white,
+                                              border: Border.all(
+                                                  color:
+                                                      const Color(0x1a010a10)),
+                                              borderRadius:
+                                                  BorderRadius.circular(10.0),
+                                            ),
+                                            child: DropdownButton<String>(
+                                              isExpanded: true,
+                                              underline: Container(),
+                                              icon: const Icon(
+                                                  Icons.arrow_drop_down,
+                                                  color: Color(0x1a010a10)),
+                                              items: <String>[
+                                                'Option 1',
+                                                'Option 2',
+                                                'Option 3',
+                                                'Option 4',
+                                              ].map((String value) {
+                                                return DropdownMenuItem<String>(
+                                                  value: value,
+                                                  child: Row(
+                                                    children: [
+                                                      const SizedBox(width: 10),
+                                                      Text(value),
+                                                    ],
+                                                  ),
+                                                );
+                                              }).toList(),
+                                              onChanged: (String? newValue) {
+                                                // Handle selection
+                                              },
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.only(
+                                          top: 10.0, left: 25.0, right: 25.0),
+                                      child: Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Padding(
+                                            padding: const EdgeInsets.only(
+                                                bottom: 10.0),
+                                            child: Row(
+                                              children: [
+                                                Text(
+                                                  'Petty Cash',
+                                                  style: GoogleFonts
+                                                      .plusJakartaSans(
+                                                    color:
+                                                        const Color(0xFF010A10),
+                                                    fontSize: 10.0,
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                          Container(
+                                            padding: const EdgeInsets.symmetric(
+                                                horizontal: 10.0),
+                                            decoration: BoxDecoration(
+                                              color: Colors.white,
+                                              border: Border.all(
+                                                  color:
+                                                      const Color(0x1a010a10)),
+                                              borderRadius:
+                                                  BorderRadius.circular(10.0),
+                                            ),
+                                            child: DropdownButton<String>(
+                                              isExpanded: true,
+                                              underline: Container(),
+                                              icon: const Icon(
+                                                  Icons.arrow_drop_down,
+                                                  color: Color(0x1a010a10)),
+                                              items: <String>[
+                                                'Option 1',
+                                                'Option 2',
+                                                'Option 3',
+                                                'Option 4',
+                                              ].map((String value) {
+                                                return DropdownMenuItem<String>(
+                                                  value: value,
+                                                  child: Row(
+                                                    children: [
+                                                      const SizedBox(width: 10),
+                                                      Text(value),
+                                                    ],
+                                                  ),
+                                                );
+                                              }).toList(),
+                                              onChanged: (String? newValue) {
+                                                // Handle selection
+                                              },
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.only(
+                                          top: 10.0, left: 25.0, right: 25.0),
+                                      child: Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Padding(
+                                            padding: const EdgeInsets.only(
+                                                bottom: 10.0),
+                                            child: Row(
+                                              children: [
+                                                Text(
+                                                  'Default Bank',
+                                                  style: GoogleFonts
+                                                      .plusJakartaSans(
+                                                    color:
+                                                        const Color(0xFF010A10),
+                                                    fontSize: 10.0,
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                          Container(
+                                            padding: const EdgeInsets.symmetric(
+                                                horizontal: 10.0),
+                                            decoration: BoxDecoration(
+                                              color: Colors.white,
+                                              border: Border.all(
+                                                  color:
+                                                      const Color(0x1a010a10)),
+                                              borderRadius:
+                                                  BorderRadius.circular(10.0),
+                                            ),
+                                            child: DropdownButton<String>(
+                                              isExpanded: true,
+                                              underline: Container(),
+                                              icon: const Icon(
+                                                  Icons.arrow_drop_down,
+                                                  color: Color(0x1a010a10)),
+                                              items: <String>[
+                                                'Option 1',
+                                                'Option 2',
+                                                'Option 3',
+                                                'Option 4',
+                                              ].map((String value) {
+                                                return DropdownMenuItem<String>(
+                                                  value: value,
+                                                  child: Row(
+                                                    children: [
+                                                      const SizedBox(width: 10),
+                                                      Text(value),
+                                                    ],
+                                                  ),
+                                                );
+                                              }).toList(),
+                                              onChanged: (String? newValue) {
+                                                // Handle selection
+                                              },
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.only(
+                                          top: 10.0, left: 25.0, right: 25.0),
+                                      child: Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Padding(
+                                            padding: const EdgeInsets.only(
+                                                bottom: 10.0),
+                                            child: Row(
+                                              children: [
+                                                Text(
+                                                  'Deffered Purchase',
+                                                  style: GoogleFonts
+                                                      .plusJakartaSans(
+                                                    color:
+                                                        const Color(0xFF010A10),
+                                                    fontSize: 10.0,
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                          Container(
+                                            padding: const EdgeInsets.symmetric(
+                                                horizontal: 10.0),
+                                            decoration: BoxDecoration(
+                                              color: Colors.white,
+                                              border: Border.all(
+                                                  color:
+                                                      const Color(0x1a010a10)),
+                                              borderRadius:
+                                                  BorderRadius.circular(10.0),
+                                            ),
+                                            child: DropdownButton<String>(
+                                              isExpanded: true,
+                                              underline: Container(),
+                                              icon: const Icon(
+                                                  Icons.arrow_drop_down,
+                                                  color: Color(0x1a010a10)),
+                                              items: <String>[
+                                                'Option 1',
+                                                'Option 2',
+                                                'Option 3',
+                                                'Option 4',
+                                              ].map((String value) {
+                                                return DropdownMenuItem<String>(
+                                                  value: value,
+                                                  child: Row(
+                                                    children: [
+                                                      const SizedBox(width: 10),
+                                                      Text(value),
+                                                    ],
+                                                  ),
+                                                );
+                                              }).toList(),
+                                              onChanged: (String? newValue) {
+                                                // Handle selection
+                                              },
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ),
                   ),
-                )
-              ],
-            )),
+                  Align(
+                    alignment: Alignment.bottomRight,
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 27.0, vertical: 42.0),
+                      child: ElevatedButton(
+                        onPressed: () {
+                          // Handle button press
+                        },
+                        style: ElevatedButton.styleFrom(
+                          fixedSize: const Size(80, 27),
+                          backgroundColor:
+                              const Color(0xFF2C3A76), // Change button color
+                          shape: RoundedRectangleBorder(
+                            borderRadius:
+                                BorderRadius.circular(7.0), // Adjust the radius
+                          ),
+                        ),
+                        child: Text(
+                          'Save',
+                          style: GoogleFonts.plusJakartaSans(
+                            color: Colors.white,
+                            fontWeight: FontWeight.w700,
+                            fontSize: 10.0,
+                          ),
+                        ),
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            ),
 
             // Content of Tab 2
             Center(
