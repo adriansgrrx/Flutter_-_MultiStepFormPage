@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:smart_ledger_ai/BankingReconcile/2_BankReconcile.dart';
 
 class BankingReconcile extends StatefulWidget {
   const BankingReconcile({super.key});
@@ -596,7 +597,7 @@ class _BankingReconcile extends State<BankingReconcile> {
                         EdgeInsets.only(top: 10.0, left: 25.0, right: 25.0),
                     child: Divider(
                       color: Colors.black,
-                      thickness: 1,
+                      thickness: 0.5,
                     ),
                   ),
                   Padding(
@@ -777,7 +778,11 @@ class _BankingReconcile extends State<BankingReconcile> {
                   const EdgeInsets.symmetric(horizontal: 27.0, vertical: 20.0),
               child: ElevatedButton(
                 onPressed: () {
-                  // Handle button press
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const BankReconcile()),
+                  );
                 },
                 style: ElevatedButton.styleFrom(
                   fixedSize: const Size(140, 27),

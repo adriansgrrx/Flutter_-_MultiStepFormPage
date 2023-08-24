@@ -2,6 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:smart_ledger_ai/BankingReconcile/1_BankingReconcile.dart';
+import 'package:smart_ledger_ai/BankingReconcile/2_BankReconcile.dart';
+import 'package:smart_ledger_ai/BankingReconcile/test.dart';
 import 'package:smart_ledger_ai/GettingStarted/5_Supplier.dart';
 import 'package:smart_ledger_ai/GettingStarted/6_Bank.dart';
 import 'package:smart_ledger_ai/GettingStarted/7_BranchDivision.dart';
@@ -23,7 +25,7 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: BankingReconcile(),
+      home: BankReconcile(),
     );
   }
 }
