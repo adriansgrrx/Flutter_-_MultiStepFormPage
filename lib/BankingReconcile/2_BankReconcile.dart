@@ -175,86 +175,96 @@ class _BankReconcile extends State<BankReconcile> {
             padding: const EdgeInsets.only(right: 15.0),
             child: Row(
               mainAxisAlignment:
-                  MainAxisAlignment.spaceEvenly, // Adjust spacing as needed
+                  MainAxisAlignment.end, // Adjust spacing as needed
               children: [
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.end,
+                Stack(
                   children: [
-                    GestureDetector(
-                      onTap: () {
-                        setState(() {
-                          _isExpanded = !_isExpanded;
-                        });
-                      },
-                      child: Container(
-                        decoration: BoxDecoration(
-                          border: Border.all(
-                            color: const Color(0xFF040404),
-                            width: 2.0, // Adjust the border width as needed
-                          ),
-                        ),
-                        width: 87,
-                        // Rest of your container styling
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              'Select Animals',
-                              style: TextStyle(
-                                fontSize: 8.0,
-                                fontWeight: FontWeight.bold,
+                    if (_isExpanded)
+                      Padding(
+                        padding: const EdgeInsets.only(top: 50.0),
+                        child: GestureDetector(
+                          onTap: () {
+                            setState(() {
+                              _isExpanded = false;
+                            });
+                          },
+                          child: Center(
+                            child: Container(
+                              decoration: BoxDecoration(
+                                shape: BoxShape.rectangle,
+                                border: Border.all(
+                                  color: const Color(0xFF040404),
+                                  width: 2.0,
+                                ),
+                              ),
+                              width: 150,
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  for (var animal in [
+                                    'Dog',
+                                    'Cat',
+                                    'Mouse',
+                                    'Lion'
+                                  ])
+                                    GestureDetector(
+                                      onTap: () {
+                                        setState(() {
+                                          // Handle option selection
+                                          _isExpanded = false;
+                                        });
+                                      },
+                                      child: Padding(
+                                        padding: const EdgeInsets.all(8.0),
+                                        child: Text(
+                                          animal,
+                                          style: TextStyle(fontSize: 8.0),
+                                        ),
+                                      ),
+                                    ),
+                                ],
                               ),
                             ),
-                            Icon(
-                              _isExpanded
-                                  ? Icons.arrow_upward
-                                  : Icons.arrow_downward,
-                            ),
-                          ],
+                          ),
                         ),
                       ),
-                    ),
-                    if (_isExpanded)
-                      Positioned(
-                        top: -10, // Adjust the position as needed
-                        right: 0, // Adjust the position as needed
-                        width: 150,
+                    Positioned(
+                      top: 0,
+                      right: 0,
+                      child: GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            _isExpanded = !_isExpanded;
+                          });
+                        },
                         child: Container(
                           decoration: BoxDecoration(
-                            shape: BoxShape.rectangle,
                             border: Border.all(
                               color: const Color(0xFF040404),
-                              width: 2.0,
+                              width: 2.0, // Adjust the border width as needed
                             ),
                           ),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
+                          width: 87,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              for (var animal in [
-                                'Dog',
-                                'Cat',
-                                'Mouse',
-                                'Lion'
-                              ])
-                                GestureDetector(
-                                  onTap: () {
-                                    setState(() {
-                                      // Handle option selection
-                                      _isExpanded = false;
-                                    });
-                                  },
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: Text(
-                                      animal,
-                                      style: TextStyle(fontSize: 8.0),
-                                    ),
-                                  ),
+                              const Text(
+                                'Select Animals',
+                                style: TextStyle(
+                                  fontSize: 8.0,
+                                  fontWeight: FontWeight.bold,
                                 ),
+                              ),
+                              Icon(
+                                _isExpanded
+                                    ? Icons.arrow_upward
+                                    : Icons.arrow_downward,
+                              ),
                             ],
                           ),
                         ),
                       ),
+                    ),
                   ],
                 ),
               ],
