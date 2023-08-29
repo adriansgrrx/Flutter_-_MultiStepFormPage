@@ -171,397 +171,75 @@ class _BankReconcile extends State<BankReconcile> {
       ),
       body: Column(
         children: [
-          Row(
-            mainAxisAlignment:
-                MainAxisAlignment.end, // Adjust spacing as needed
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(right: 10.0, bottom: 92),
-                child: Stack(
-                  children: [
-                    if (_isExpanded)
-                      Padding(
-                        padding: const EdgeInsets.only(top: 25.0),
-                        child: GestureDetector(
-                          onTap: () {
-                            setState(() {
-                              _isExpanded = false;
-                            });
-                          },
-                          child: Card(
-                            child: Container(
-                              decoration: BoxDecoration(
-                                shape: BoxShape.rectangle,
-                                borderRadius: BorderRadius.circular(5.0),
-                              ),
-                              width: 150,
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  GestureDetector(
-                                    onTap: () {
-                                      setState(() {
-                                        // Handle option selection
-                                        _isExpanded = false;
-                                      });
-                                    },
-                                    child: Padding(
-                                      padding: const EdgeInsets.all(10.0),
-                                      child: Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          Padding(
-                                            padding: const EdgeInsets.only(
-                                                left: 10.0, bottom: 5.0),
-                                            child: Text(
-                                              'All',
-                                              style:
-                                                  GoogleFonts.plusJakartaSans(
-                                                      color: Colors.black,
-                                                      fontSize: 10.0,
-                                                      fontWeight:
-                                                          FontWeight.w500),
-                                            ),
-                                          ),
-                                          Padding(
-                                            padding: const EdgeInsets.only(
-                                                left: 10.0, bottom: 5.0),
-                                            child: Text(
-                                              'Need attention',
-                                              style:
-                                                  GoogleFonts.plusJakartaSans(
-                                                      color: Colors.black,
-                                                      fontSize: 10.0,
-                                                      fontWeight:
-                                                          FontWeight.w500),
-                                            ),
-                                          ),
-                                          Padding(
-                                            padding: const EdgeInsets.only(
-                                                left: 10.0, bottom: 5.0),
-                                            child: Text(
-                                              'Unpaid',
-                                              style:
-                                                  GoogleFonts.plusJakartaSans(
-                                                      color: Colors.black,
-                                                      fontSize: 10.0,
-                                                      fontWeight:
-                                                          FontWeight.w500),
-                                            ),
-                                          ),
-                                          const Divider(
-                                            thickness: 0.5,
-                                          ),
-                                          Padding(
-                                            padding: const EdgeInsets.only(
-                                                left: 20.0, bottom: 5.0),
-                                            child: Text(
-                                              '•  Overdue',
-                                              style:
-                                                  GoogleFonts.plusJakartaSans(
-                                                      color: Colors.black,
-                                                      fontSize: 10.0,
-                                                      fontWeight:
-                                                          FontWeight.w500),
-                                            ),
-                                          ),
-                                          Padding(
-                                            padding: const EdgeInsets.only(
-                                                left: 20.0, bottom: 5.0),
-                                            child: Text(
-                                              '•  Not due',
-                                              style:
-                                                  GoogleFonts.plusJakartaSans(
-                                                      color: Colors.black,
-                                                      fontSize: 10.0,
-                                                      fontWeight:
-                                                          FontWeight.w500),
-                                            ),
-                                          ),
-                                          const Divider(
-                                            thickness: 0.5,
-                                          ),
-                                          Padding(
-                                            padding: const EdgeInsets.only(
-                                                left: 10.0, bottom: 5.0),
-                                            child: Text(
-                                              'Paid',
-                                              style:
-                                                  GoogleFonts.plusJakartaSans(
-                                                      color: Colors.black,
-                                                      fontSize: 10.0,
-                                                      fontWeight:
-                                                          FontWeight.w500),
-                                            ),
-                                          ),
-                                          Padding(
-                                            padding: const EdgeInsets.only(
-                                                left: 20.0, bottom: 5.0),
-                                            child: Text(
-                                              '•  Deposited',
-                                              style:
-                                                  GoogleFonts.plusJakartaSans(
-                                                      color: Colors.black,
-                                                      fontSize: 10.0,
-                                                      fontWeight:
-                                                          FontWeight.w500),
-                                            ),
-                                          ),
-                                          Padding(
-                                            padding: const EdgeInsets.only(
-                                                left: 20.0, bottom: 15.0),
-                                            child: Text(
-                                              '•  Not deposited',
-                                              style:
-                                                  GoogleFonts.plusJakartaSans(
-                                                      color: Colors.black,
-                                                      fontSize: 10.0,
-                                                      fontWeight:
-                                                          FontWeight.w500),
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                    Positioned(
-                      top: 0,
-                      right: 3,
-                      child: GestureDetector(
-                        onTap: () {
-                          setState(() {
-                            _isExpanded = !_isExpanded;
-                          });
-                        },
-                        child: Container(
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(5.0),
-                            border: Border.all(
-                              color: const Color(0xFF02C165),
-                              width: 0.5, // Adjust the border width as needed
-                            ),
-                          ),
-                          width: 87,
-                          height: 24,
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text(
-                                'Edit Info',
-                                style: GoogleFonts.plusJakartaSans(
-                                    color: Colors.black,
-                                    fontSize: 8.0,
-                                    fontWeight: FontWeight.w500),
-                              ),
-                            ],
-                          ),
-                        ),
+          Padding(
+            padding: const EdgeInsets.only(right: 15.0),
+            child: Row(
+              mainAxisAlignment:
+                  MainAxisAlignment.end, // Adjust spacing as needed
+              children: [
+                GestureDetector(
+                  onTap: () {
+                    setState(() {});
+                  },
+                  child: Container(
+                    width: 87,
+                    height: 24,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(5.0),
+                      border: Border.all(
+                        color: const Color(0xFF02C165),
+                        width: 0.5, // Adjust the border width as needed
                       ),
                     ),
-                  ],
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(right: 15.0),
-                child: Stack(
-                  children: [
-                    if (_isExpanded)
-                      Padding(
-                        padding: const EdgeInsets.only(top: 25.0),
-                        child: GestureDetector(
-                          onTap: () {
-                            setState(() {
-                              _isExpanded = false;
-                            });
-                          },
-                          child: Card(
-                            child: Container(
-                              decoration: BoxDecoration(
-                                shape: BoxShape.rectangle,
-                                borderRadius: BorderRadius.circular(5.0),
-                              ),
-                              width: 87,
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  GestureDetector(
-                                    onTap: () {
-                                      setState(() {
-                                        // Handle option selection
-                                        _isExpanded = false;
-                                      });
-                                    },
-                                    child: Padding(
-                                      padding: const EdgeInsets.all(10.0),
-                                      child: Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          Padding(
-                                            padding: const EdgeInsets.only(
-                                                left: 10.0, bottom: 5.0),
-                                            child: Text(
-                                              'All',
-                                              style:
-                                                  GoogleFonts.plusJakartaSans(
-                                                      color: Colors.black,
-                                                      fontSize: 10.0,
-                                                      fontWeight:
-                                                          FontWeight.w500),
-                                            ),
-                                          ),
-                                          Padding(
-                                            padding: const EdgeInsets.only(
-                                                left: 10.0, bottom: 5.0),
-                                            child: Text(
-                                              'Need attention',
-                                              style:
-                                                  GoogleFonts.plusJakartaSans(
-                                                      color: Colors.black,
-                                                      fontSize: 10.0,
-                                                      fontWeight:
-                                                          FontWeight.w500),
-                                            ),
-                                          ),
-                                          Padding(
-                                            padding: const EdgeInsets.only(
-                                                left: 10.0, bottom: 5.0),
-                                            child: Text(
-                                              'Unpaid',
-                                              style:
-                                                  GoogleFonts.plusJakartaSans(
-                                                      color: Colors.black,
-                                                      fontSize: 10.0,
-                                                      fontWeight:
-                                                          FontWeight.w500),
-                                            ),
-                                          ),
-                                          const Divider(
-                                            thickness: 0.5,
-                                          ),
-                                          Padding(
-                                            padding: const EdgeInsets.only(
-                                                left: 20.0, bottom: 5.0),
-                                            child: Text(
-                                              '•  Overdue',
-                                              style:
-                                                  GoogleFonts.plusJakartaSans(
-                                                      color: Colors.black,
-                                                      fontSize: 10.0,
-                                                      fontWeight:
-                                                          FontWeight.w500),
-                                            ),
-                                          ),
-                                          Padding(
-                                            padding: const EdgeInsets.only(
-                                                left: 20.0, bottom: 5.0),
-                                            child: Text(
-                                              '•  Not due',
-                                              style:
-                                                  GoogleFonts.plusJakartaSans(
-                                                      color: Colors.black,
-                                                      fontSize: 10.0,
-                                                      fontWeight:
-                                                          FontWeight.w500),
-                                            ),
-                                          ),
-                                          const Divider(
-                                            thickness: 0.5,
-                                          ),
-                                          Padding(
-                                            padding: const EdgeInsets.only(
-                                                left: 10.0, bottom: 5.0),
-                                            child: Text(
-                                              'Paid',
-                                              style:
-                                                  GoogleFonts.plusJakartaSans(
-                                                      color: Colors.black,
-                                                      fontSize: 10.0,
-                                                      fontWeight:
-                                                          FontWeight.w500),
-                                            ),
-                                          ),
-                                          Padding(
-                                            padding: const EdgeInsets.only(
-                                                left: 20.0, bottom: 5.0),
-                                            child: Text(
-                                              '•  Deposited',
-                                              style:
-                                                  GoogleFonts.plusJakartaSans(
-                                                      color: Colors.black,
-                                                      fontSize: 10.0,
-                                                      fontWeight:
-                                                          FontWeight.w500),
-                                            ),
-                                          ),
-                                          Padding(
-                                            padding: const EdgeInsets.only(
-                                                left: 20.0, bottom: 15.0),
-                                            child: Text(
-                                              '•  Not deposited',
-                                              style:
-                                                  GoogleFonts.plusJakartaSans(
-                                                      color: Colors.black,
-                                                      fontSize: 10.0,
-                                                      fontWeight:
-                                                          FontWeight.w500),
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          'Edit Info',
+                          style: GoogleFonts.plusJakartaSans(
+                              color: Colors.black,
+                              fontSize: 8.0,
+                              fontWeight: FontWeight.w500),
                         ),
-                      ),
-                    Positioned(
-                      top: 0,
-                      right: 3,
-                      child: GestureDetector(
-                        onTap: () {
-                          setState(() {
-                            _isExpanded = !_isExpanded;
-                          });
-                        },
-                        child: Container(
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(5.0),
-                            border: Border.all(
-                              color: const Color(0xFF02C165),
-                              width: 0.5, // Adjust the border width as needed
-                            ),
-                          ),
-                          width: 87,
-                          height: 24,
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text(
-                                'Edit Info',
-                                style: GoogleFonts.plusJakartaSans(
-                                    color: Colors.black,
-                                    fontSize: 8.0,
-                                    fontWeight: FontWeight.w500),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
+                      ],
                     ),
-                  ],
+                  ),
                 ),
-              ),
-            ],
+                const SizedBox(
+                  width: 15.0,
+                ),
+                GestureDetector(
+                  onTap: () {
+                    setState(() {});
+                  },
+                  child: Container(
+                    width: 87,
+                    height: 24,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(5.0),
+                      color: const Color(0xFF02C165),
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          'Save for later',
+                          style: GoogleFonts.plusJakartaSans(
+                              color: Colors.white,
+                              fontSize: 8.0,
+                              fontWeight: FontWeight.w500),
+                        ),
+                        const Icon(
+                          Icons.arrow_drop_down,
+                          color: Colors.white,
+                          size: 20.0,
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ),
         ],
       ),
