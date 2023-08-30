@@ -9,9 +9,6 @@ class BankReconcile extends StatefulWidget {
 }
 
 class _BankReconcile extends State<BankReconcile> {
-  bool _isExpanded = false;
-  bool _isExpanded2 = false;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -170,6 +167,7 @@ class _BankReconcile extends State<BankReconcile> {
         elevation: 0,
       ),
       body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
             padding: const EdgeInsets.only(right: 15.0),
@@ -240,6 +238,274 @@ class _BankReconcile extends State<BankReconcile> {
                 ),
               ],
             ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 25.0, left: 25.0, right: 25.0),
+            child: Text(
+              'Cash and cash equivalent',
+              style: GoogleFonts.plusJakartaSans(
+                  color: const Color(0xFF010A10),
+                  fontSize: 14.0,
+                  fontWeight: FontWeight.w600),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 10.0, left: 25.0, right: 25.0),
+            child: Text(
+              'Statement ending date: August 14, 2023',
+              style: GoogleFonts.plusJakartaSans(
+                  color: const Color(0xFF010A10),
+                  fontSize: 10.0,
+                  fontWeight: FontWeight.w400),
+            ),
+          ),
+          Row(
+            children: [
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(
+                        top: 25.0, left: 25.0, right: 10.0),
+                    child: Text(
+                      '₱10,000.00',
+                      style: GoogleFonts.plusJakartaSans(
+                          color: const Color(0xFF010A10),
+                          fontSize: 14.0,
+                          fontWeight: FontWeight.w700),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(
+                        top: 5.0, left: 25.0, right: 10.0),
+                    child: Text(
+                      'Statement Ending Balance',
+                      style: GoogleFonts.plusJakartaSans(
+                          color: const Color(0xFF010A10),
+                          fontSize: 8.0,
+                          fontWeight: FontWeight.w400),
+                    ),
+                  ),
+                ],
+              ),
+              Transform.translate(
+                offset: const Offset(2, 6),
+                child: const Icon(
+                  Icons.remove,
+                  size: 36,
+                  color: Colors.black,
+                ),
+              ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(
+                        top: 25.0, left: 25.0, right: 10.0),
+                    child: Text(
+                      '₱0.00',
+                      style: GoogleFonts.plusJakartaSans(
+                          color: const Color(0xFF010A10),
+                          fontSize: 14.0,
+                          fontWeight: FontWeight.w700),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(
+                        top: 5.0, left: 25.0, right: 10.0),
+                    child: Text(
+                      'Cleared Balance',
+                      style: GoogleFonts.plusJakartaSans(
+                          color: const Color(0xFF010A10),
+                          fontSize: 8.0,
+                          fontWeight: FontWeight.w400),
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
+          const Padding(
+            padding: EdgeInsets.only(bottom: 5.0, left: 25.0, right: 25.0),
+            child: Divider(
+              thickness: 0.5,
+            ),
+          ),
+          Row(
+            children: [
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(
+                        top: 0.0, left: 25.0, right: 10.0),
+                    child: Text(
+                      '₱0.00',
+                      style: GoogleFonts.plusJakartaSans(
+                          color: const Color(0xFF010A10),
+                          fontSize: 14.0,
+                          fontWeight: FontWeight.w700),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(
+                        top: 0.0, left: 25.0, right: 10.0),
+                    child: Text(
+                      'Beginning Balance',
+                      style: GoogleFonts.plusJakartaSans(
+                          color: const Color(0xFF010A10),
+                          fontSize: 8.0,
+                          fontWeight: FontWeight.w400),
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(
+                width: 90,
+              ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding:
+                        const EdgeInsets.only(top: 0.0, left: 0.0, right: 10.0),
+                    child: Text(
+                      '₱0.00',
+                      style: GoogleFonts.plusJakartaSans(
+                          color: const Color(0xFF010A10),
+                          fontSize: 14.0,
+                          fontWeight: FontWeight.w700),
+                    ),
+                  ),
+                  Padding(
+                    padding:
+                        const EdgeInsets.only(top: 0.0, left: 0.0, right: 10.0),
+                    child: Text(
+                      '0 Payments',
+                      style: GoogleFonts.plusJakartaSans(
+                          color: const Color(0xFF010A10),
+                          fontSize: 8.0,
+                          fontWeight: FontWeight.w400),
+                    ),
+                  ),
+                ],
+              ),
+              Transform.translate(
+                offset: const Offset(2, 0),
+                child: const Icon(
+                  Icons.add,
+                  size: 36,
+                  color: Colors.black,
+                ),
+              ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding:
+                        const EdgeInsets.only(top: 0.0, left: 15.0, right: 0.0),
+                    child: Text(
+                      '₱0.00',
+                      style: GoogleFonts.plusJakartaSans(
+                          color: const Color(0xFF010A10),
+                          fontSize: 14.0,
+                          fontWeight: FontWeight.w700),
+                    ),
+                  ),
+                  Padding(
+                    padding:
+                        const EdgeInsets.only(top: 0.0, left: 15.0, right: 0.0),
+                    child: Text(
+                      '0 Deposits',
+                      style: GoogleFonts.plusJakartaSans(
+                          color: const Color(0xFF010A10),
+                          fontSize: 8.0,
+                          fontWeight: FontWeight.w400),
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              SizedBox(
+                width: 200,
+                child: Padding(
+                  padding:
+                      const EdgeInsets.only(top: 25.0, left: 25.0, right: 25.0),
+                  child: Column(
+                    children: [
+                      const Divider(
+                        thickness: 0.5,
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 3.0),
+                        child: Text(
+                          '₱10,000.00',
+                          style: GoogleFonts.plusJakartaSans(
+                              color: const Color(0xFF010A10),
+                              fontSize: 14.0,
+                              fontWeight: FontWeight.w700),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 5.0),
+                        child: Text(
+                          'Statement Ending Balance',
+                          style: GoogleFonts.plusJakartaSans(
+                              color: const Color(0xFF010A10),
+                              fontSize: 8.0,
+                              fontWeight: FontWeight.w400),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
+          Stack(
+            children: [
+              Padding(
+                padding:
+                    const EdgeInsets.only(top: 35, left: 25.0, right: 25.0),
+                child: Container(
+                  height: 24,
+                  decoration: const BoxDecoration(
+                    color: Color(0xFF2C3A76),
+                  ),
+                ),
+              ),
+              Positioned(
+                top: 0.0,
+                left: 0.0,
+                child: Row(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(
+                          top: 35, left: 25.0, right: 25.0),
+                      child: Container(
+                        width: 335,
+                        height: 15,
+                        decoration: const BoxDecoration(
+                          color: Colors.white,
+                        ),
+                      ),
+                    ),
+                    Transform.translate(
+                      offset: const Offset(-22, 21),
+                      child: const Icon(
+                        Icons.arrow_drop_up_outlined,
+                        size: 20,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
           ),
         ],
       ),
