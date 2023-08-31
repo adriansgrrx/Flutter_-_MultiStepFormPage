@@ -6,7 +6,8 @@ import 'package:smart_ledger_ai/BankingReconcile/2_BankReconcile.dart';
 import 'package:smart_ledger_ai/GettingStarted/5_Supplier.dart';
 import 'package:smart_ledger_ai/GettingStarted/6_Bank.dart';
 import 'package:smart_ledger_ai/GettingStarted/7_BranchDivision.dart';
-import 'package:smart_ledger_ai/Masterlist/1_CustomerImportImage.dart';
+import 'package:smart_ledger_ai/Masterlist/1_CustomerInformation.dart';
+import 'package:smart_ledger_ai/Masterlist/4_CustomerImportImage.dart';
 import 'package:smart_ledger_ai/Dashboard/MainDashboard.dart';
 import 'package:smart_ledger_ai/PurchasesAPV/1_PurchasesAPV.dart';
 import 'package:smart_ledger_ai/SettingsPreferences/1_SettingsPreferences.dart';
@@ -24,7 +25,7 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: BankReconcile(),
+      home: CustomerInfoDashboard(),
     );
   }
 }
