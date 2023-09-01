@@ -220,7 +220,7 @@ class _CustomerInformationState extends State<CustomerInformation> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
-                                'Save for later',
+                                'New Customer',
                                 style: GoogleFonts.plusJakartaSans(
                                     color: Colors.white,
                                     fontSize: 8.0,
@@ -241,113 +241,466 @@ class _CustomerInformationState extends State<CustomerInformation> {
                     ),
                   ],
                 ),
-                Padding(
-                  padding: const EdgeInsets.all(10.0),
-                  child: DataTable(
-                    border: const TableBorder(
-                      verticalInside: BorderSide(
-                          width: 0.7,
-                          color: Colors.grey), // Inner vertical border
+                const SizedBox(
+                  height: 30,
+                ),
+                Table(
+                  defaultColumnWidth: const FlexColumnWidth(2.0),
+                  border: const TableBorder(
+                    verticalInside: BorderSide(
+                        width: 0.7,
+                        color: Color.fromARGB(
+                            255, 123, 127, 131)), // Inner vertical border
+                  ),
+                  children: [
+                    TableRow(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(bottom: 3.0),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Text(
+                                'PHP0.00',
+                                style: GoogleFonts.plusJakartaSans(
+                                    color: Colors.black,
+                                    fontSize: 12.0,
+                                    fontWeight: FontWeight.w500),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(bottom: 3.0),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Text(
+                                'PHP0.00',
+                                style: GoogleFonts.plusJakartaSans(
+                                    color: Colors.black,
+                                    fontSize: 12.0,
+                                    fontWeight: FontWeight.w500),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(bottom: 3.0),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Text(
+                                'PHP0.00',
+                                style: GoogleFonts.plusJakartaSans(
+                                    color: Colors.black,
+                                    fontSize: 12.0,
+                                    fontWeight: FontWeight.w500),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(bottom: 3.0),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Text(
+                                'PHP0.00',
+                                style: GoogleFonts.plusJakartaSans(
+                                    color: Colors.black,
+                                    fontSize: 12.0,
+                                    fontWeight: FontWeight.w500),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(bottom: 3.0),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Text(
+                                'PHP0.00',
+                                style: GoogleFonts.plusJakartaSans(
+                                    color: Colors.black,
+                                    fontSize: 12.0,
+                                    fontWeight: FontWeight.w500),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
                     ),
-                    columnSpacing: 30.0,
-                    columns: [
-                      DataColumn(
-                        label: Text(
-                          'PHP0.00',
-                          style: GoogleFonts.plusJakartaSans(
-                              color: Colors.black,
-                              fontSize: 12.0,
-                              fontWeight: FontWeight.w500),
+                    TableRow(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(3.0),
+                          child: Center(
+                            child: Text(
+                              'Estimate',
+                              style: GoogleFonts.plusJakartaSans(
+                                  color: const Color(0xFFFF8A00),
+                                  fontSize: 8.0,
+                                  fontWeight: FontWeight.w500),
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(3.0),
+                          child: Center(
+                            child: Text(
+                              '0 unbilled\n   Activity',
+                              style: GoogleFonts.plusJakartaSans(
+                                  color: const Color(0xFFB69D1B),
+                                  fontSize: 8.0,
+                                  fontWeight: FontWeight.w500),
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(3.0),
+                          child: Center(
+                            child: Text(
+                              '1 overdue',
+                              style: GoogleFonts.plusJakartaSans(
+                                  color: const Color(0xFF2C3A76),
+                                  fontSize: 8.0,
+                                  fontWeight: FontWeight.w500),
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(3.0),
+                          child: Center(
+                            child: Text(
+                              '1 open invoice',
+                              style: GoogleFonts.plusJakartaSans(
+                                  color: const Color(0x80010A10),
+                                  fontSize: 8.0,
+                                  fontWeight: FontWeight.w500),
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(6.0),
+                          child: Center(
+                            child: Text(
+                              '0 paid last\n   30 days',
+                              style: GoogleFonts.plusJakartaSans(
+                                  color: const Color(0xFF02C165),
+                                  fontSize: 8.0,
+                                  fontWeight: FontWeight.w500),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 20.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Container(
+                        width: 156,
+                        height: 24,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(5.0),
+                        ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            const SizedBox(
+                              width: 10.0,
+                            ),
+                            Expanded(
+                              child: TextField(
+                                style: GoogleFonts.plusJakartaSans(
+                                  textStyle: const TextStyle(
+                                    color: Colors.grey,
+                                    fontSize:
+                                        10.0, // Adjust the font size as needed
+                                  ),
+                                ),
+                                decoration: InputDecoration(
+                                  hintText: 'Search',
+                                  hintStyle: GoogleFonts.plusJakartaSans(
+                                    textStyle: const TextStyle(
+                                        color: Colors.grey,
+                                        fontSize:
+                                            10.0, // Adjust the font size as needed
+                                        fontWeight: FontWeight.w500),
+                                  ),
+                                  border: InputBorder.none,
+                                  contentPadding: const EdgeInsets.symmetric(
+                                      vertical: 11.5),
+                                ),
+                              ),
+                            ),
+                            const Padding(
+                              padding: EdgeInsets.only(right: 5.0),
+                              child: Icon(
+                                Icons.search,
+                                color: Colors.grey,
+                                size: 15.0,
+                              ),
+                            ),
+                          ],
                         ),
                       ),
-                      DataColumn(
-                        label: Text(
-                          'PHP0.00',
-                          style: GoogleFonts.plusJakartaSans(
-                              color: Colors.black,
-                              fontSize: 12.0,
-                              fontWeight: FontWeight.w500),
-                        ),
-                      ),
-                      DataColumn(
-                        label: Text(
-                          'PHP0.00',
-                          style: GoogleFonts.plusJakartaSans(
-                              color: Colors.black,
-                              fontSize: 12.0,
-                              fontWeight: FontWeight.w500),
-                        ),
-                      ),
-                      DataColumn(
-                        label: Text(
-                          'PHP0.00',
-                          style: GoogleFonts.plusJakartaSans(
-                              color: Colors.black,
-                              fontSize: 12.0,
-                              fontWeight: FontWeight.w500),
-                        ),
-                      ),
-                      DataColumn(
-                        label: Text(
-                          'PHP0.00',
-                          style: GoogleFonts.plusJakartaSans(
-                              color: Colors.black,
-                              fontSize: 12.0,
-                              fontWeight: FontWeight.w500),
+                      Transform.translate(
+                        offset: const Offset(0, 0),
+                        child: GestureDetector(
+                          onTap: () {
+                            setState(() {});
+                          },
+                          child: Container(
+                            width: 96,
+                            height: 26,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(5.0),
+                              color: const Color(0xFF02C165),
+                            ),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text(
+                                  'Batch Action',
+                                  style: GoogleFonts.plusJakartaSans(
+                                      color: Colors.white,
+                                      fontSize: 8.0,
+                                      fontWeight: FontWeight.w500),
+                                ),
+                                Transform.translate(
+                                  offset: const Offset(6, 0),
+                                  child: const Icon(
+                                    Icons.arrow_drop_down,
+                                    size: 20.0,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
                         ),
                       ),
                     ],
-                    rows: [
-                      DataRow(
-                        cells: [
-                          DataCell(
-                            Text(
-                              'Estimate',
-                              style: GoogleFonts.plusJakartaSans(
-                                  color: Colors.black,
-                                  fontSize: 8.0,
-                                  fontWeight: FontWeight.w400),
-                            ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 20.0),
+                  child: Card(
+                    child: Padding(
+                      padding: const EdgeInsets.only(top: 0.0, bottom: 0.0),
+                      child: Table(
+                        defaultColumnWidth: const FlexColumnWidth(2.0),
+                        border: const TableBorder(
+                          verticalInside:
+                              BorderSide(width: 1, color: Colors.grey),
+                          horizontalInside:
+                              BorderSide(width: 1, color: Colors.grey),
+                        ),
+                        children: [
+                          TableRow(
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.all(10.0),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    Text(
+                                      'Company/Customer',
+                                      style: GoogleFonts.plusJakartaSans(
+                                          color: Colors.black,
+                                          fontSize: 10.0,
+                                          fontWeight: FontWeight.w400),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.all(10.0),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    Text(
+                                      'Phone',
+                                      style: GoogleFonts.plusJakartaSans(
+                                          color: Colors.black,
+                                          fontSize: 10.0,
+                                          fontWeight: FontWeight.w400),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.all(10.0),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    Center(
+                                      child: Text(
+                                        'Open Balance',
+                                        style: GoogleFonts.plusJakartaSans(
+                                            color: Colors.black,
+                                            fontSize: 10.0,
+                                            fontWeight: FontWeight.w400),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.all(10.0),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    Text(
+                                      'Action',
+                                      style: GoogleFonts.plusJakartaSans(
+                                          color: Colors.black,
+                                          fontSize: 10.0,
+                                          fontWeight: FontWeight.w400),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
                           ),
-                          DataCell(
-                            Text(
-                              '0 unbilled \nActivity',
-                              style: GoogleFonts.plusJakartaSans(
-                                  color: Colors.black,
-                                  fontSize: 8.0,
-                                  fontWeight: FontWeight.w400),
-                            ),
+                          TableRow(
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Center(
+                                  child: Text(
+                                    'Juan Dela Cruz',
+                                    style: GoogleFonts.plusJakartaSans(
+                                        color: Colors.black,
+                                        fontSize: 8.0,
+                                        fontWeight: FontWeight.w500),
+                                  ),
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Center(
+                                  child: Text(
+                                    '0912 123 1234',
+                                    style: GoogleFonts.plusJakartaSans(
+                                        color: Colors.black,
+                                        fontSize: 8.0,
+                                        fontWeight: FontWeight.w500),
+                                  ),
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Center(
+                                  child: Text(
+                                    'P 123.00',
+                                    style: GoogleFonts.plusJakartaSans(
+                                        color: Colors.black,
+                                        fontSize: 8.0,
+                                        fontWeight: FontWeight.w500),
+                                  ),
+                                ),
+                              ),
+                              SizedBox(
+                                width: 96,
+                                height: 26,
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Text(
+                                      'Create invoice',
+                                      style: GoogleFonts.plusJakartaSans(
+                                          color: const Color(0xFF0094FF),
+                                          fontSize: 8.0,
+                                          fontWeight: FontWeight.w500),
+                                    ),
+                                    Transform.translate(
+                                      offset: const Offset(0, 0),
+                                      child: const Icon(
+                                        Icons.arrow_drop_down,
+                                        size: 20.0,
+                                        color: Color(0xFF0094FF),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
                           ),
-                          DataCell(
-                            Text(
-                              '1 overdue',
-                              style: GoogleFonts.plusJakartaSans(
-                                  color: Colors.black,
-                                  fontSize: 8.0,
-                                  fontWeight: FontWeight.w400),
-                            ),
-                          ),
-                          DataCell(
-                            Text(
-                              '1 open invoice',
-                              style: GoogleFonts.plusJakartaSans(
-                                  color: Colors.black,
-                                  fontSize: 8.0,
-                                  fontWeight: FontWeight.w400),
-                            ),
-                          ),
-                          DataCell(
-                            Text(
-                              '0 paid last \n30 days',
-                              style: GoogleFonts.plusJakartaSans(
-                                  color: Colors.black,
-                                  fontSize: 8.0,
-                                  fontWeight: FontWeight.w400),
-                            ),
+                          TableRow(
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Center(
+                                  child: Text(
+                                    'Juan Dela Cruz',
+                                    style: GoogleFonts.plusJakartaSans(
+                                        color: Colors.black,
+                                        fontSize: 8.0,
+                                        fontWeight: FontWeight.w500),
+                                  ),
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Center(
+                                  child: Text(
+                                    '0912 123 1234',
+                                    style: GoogleFonts.plusJakartaSans(
+                                        color: Colors.black,
+                                        fontSize: 8.0,
+                                        fontWeight: FontWeight.w500),
+                                  ),
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Center(
+                                  child: Text(
+                                    'P 123.00',
+                                    style: GoogleFonts.plusJakartaSans(
+                                        color: Colors.black,
+                                        fontSize: 8.0,
+                                        fontWeight: FontWeight.w500),
+                                  ),
+                                ),
+                              ),
+                              SizedBox(
+                                width: 96,
+                                height: 26,
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Text(
+                                      'Received\npayment',
+                                      style: GoogleFonts.plusJakartaSans(
+                                          color: const Color(0xFF0094FF),
+                                          fontSize: 8.0,
+                                          fontWeight: FontWeight.w500),
+                                    ),
+                                    Transform.translate(
+                                      offset: const Offset(0, 0),
+                                      child: const Icon(
+                                        Icons.arrow_drop_down,
+                                        size: 20.0,
+                                        color: Color(0xFF0094FF),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
                           ),
                         ],
                       ),
-                    ],
+                    ),
                   ),
                 ),
               ],
