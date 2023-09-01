@@ -1,295 +1,266 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:smart_ledger_ai/Registration/LoginScreen.dart';
 
-class CustomerInfoDashboard extends StatefulWidget {
-  const CustomerInfoDashboard({super.key});
+class CustomerImportImagePage extends StatefulWidget {
+  const CustomerImportImagePage({super.key});
 
   @override
-  State<CustomerInfoDashboard> createState() => _CustomerInfoDashboard();
+  State<CustomerImportImagePage> createState() =>
+      _CustomerImportImagePageState();
 }
 
-class _CustomerInfoDashboard extends State<CustomerInfoDashboard> {
+class _CustomerImportImagePageState extends State<CustomerImportImagePage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        iconTheme: const IconThemeData(color: Colors.black),
-        actions: <Widget>[
-          Row(
-            children: [
-              Stack(
+    return MaterialApp(
+      home: SafeArea(
+        child: Scaffold(
+          backgroundColor: const Color(0xFFFFFBF2),
+          appBar: AppBar(
+            iconTheme: const IconThemeData(color: Colors.black),
+            actions: <Widget>[
+              Row(
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.only(right: 45.0),
-                    child: Container(
-                      width: 130,
-                      height: 20,
-                      decoration: BoxDecoration(
-                        color: const Color(0xFF2C3A76),
-                        borderRadius: BorderRadius.circular(20),
-                      ),
-                      child: DropdownButton<String>(
-                        onChanged: (String? newValue) {
-                          // Handle dropdown value change
-                        },
-                        items: <String>[
-                          'Option 1',
-                          'Option 2',
-                          'Option 3',
-                        ].map<DropdownMenuItem<String>>((String value) {
-                          return DropdownMenuItem<String>(
-                            value: value,
-                            child: Text(value),
-                          );
-                        }).toList(),
-                        style: GoogleFonts.plusJakartaSans(
-                          color: const Color(0xFF010A10),
-                          fontSize: 10.0,
-                        ),
-                        underline: Container(
-                          color: Colors.transparent,
-                        ),
-                        icon: Transform.translate(
-                          offset: const Offset(
-                              -2, -2), // Adjust the Y offset as needed
-                          child: const Icon(
-                            Icons.arrow_drop_down,
-                            color: Colors.white,
+                  Stack(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(right: 45.0),
+                        child: Container(
+                          width: 130,
+                          height: 20,
+                          decoration: BoxDecoration(
+                            color: const Color(0xFF2C3A76),
+                            borderRadius: BorderRadius.circular(20),
                           ),
-                        ),
-                        hint: Padding(
-                          padding: const EdgeInsets.only(left: 10.0),
-                          child: Text(
-                            'Categories',
+                          child: DropdownButton<String>(
+                            onChanged: (String? newValue) {
+                              // Handle dropdown value change
+                            },
+                            items: <String>[
+                              'Option 1',
+                              'Option 2',
+                              'Option 3',
+                            ].map<DropdownMenuItem<String>>((String value) {
+                              return DropdownMenuItem<String>(
+                                value: value,
+                                child: Text(value),
+                              );
+                            }).toList(),
                             style: GoogleFonts.plusJakartaSans(
+                              color: const Color(0xFF010A10),
+                              fontSize: 10.0,
+                            ),
+                            underline: Container(
+                              color: Colors.transparent,
+                            ),
+                            icon: Transform.translate(
+                              offset: const Offset(
+                                  -2, -2), // Adjust the Y offset as needed
+                              child: const Icon(
+                                Icons.arrow_drop_down,
                                 color: Colors.white,
-                                fontSize: 10.0,
-                                fontWeight: FontWeight.w600),
+                              ),
+                            ),
+                            hint: Padding(
+                              padding: const EdgeInsets.only(left: 10.0),
+                              child: Text(
+                                'Categories',
+                                style: GoogleFonts.plusJakartaSans(
+                                    color: Colors.white,
+                                    fontSize: 10.0,
+                                    fontWeight: FontWeight.w600),
+                              ),
+                            ),
                           ),
+                        ),
+                      ),
+                      Positioned(
+                        right: 10.0,
+                        top: 0.0, // Adjust this value to control overlap amount
+                        child: Container(
+                          width: 80,
+                          height: 20,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: const BorderRadius.only(
+                              topRight: Radius.circular(10.0),
+                              bottomLeft: Radius.circular(10.0),
+                            ),
+                            border: Border.all(
+                              color: Colors.black, // Set the border color
+                              width: 0.1, // Set the border width
+                            ),
+                          ),
+                          child: const Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              SizedBox(
+                                width: 5.0,
+                              ),
+                              Expanded(
+                                child: TextField(
+                                  style: TextStyle(
+                                      color: Colors.black, fontSize: 10.0),
+                                  decoration: InputDecoration(
+                                      // hintText: 'Search',
+                                      hintStyle: TextStyle(
+                                          color: Colors.black, fontSize: 10.0),
+                                      border: InputBorder.none,
+                                      contentPadding:
+                                          EdgeInsets.symmetric(vertical: 13.0)),
+                                ),
+                              ),
+                              Icon(
+                                Icons.search,
+                                color: Colors.black,
+                                size: 20.0,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(right: 8.0),
+                    child: GestureDetector(
+                      onTap: () {},
+                      child: const Icon(
+                        Icons.notifications_none_rounded,
+                        color: Color(0xFF040404),
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(
+                      left: 8.0,
+                      right: 8.0,
+                    ),
+                    child: GestureDetector(
+                      onTap: () {},
+                      child: Container(
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          border: Border.all(
+                            color: const Color(0xFF040404),
+                            width: 2.0, // Adjust the border width as needed
+                          ),
+                        ),
+                        child: const Icon(
+                          Icons.question_mark,
+                          size: 20,
+                          color: Color(0xFF040404),
                         ),
                       ),
                     ),
                   ),
-                  Positioned(
-                    right: 10.0,
-                    top: 0.0, // Adjust this value to control overlap amount
-                    child: Container(
-                      width: 80,
-                      height: 20,
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: const BorderRadius.only(
-                          topRight: Radius.circular(10.0),
-                          bottomLeft: Radius.circular(10.0),
-                        ),
-                        border: Border.all(
-                          color: Colors.black, // Set the border color
-                          width: 0.1, // Set the border width
-                        ),
-                      ),
-                      child: const Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          SizedBox(
-                            width: 5.0,
-                          ),
-                          Expanded(
-                            child: TextField(
-                              style: TextStyle(
-                                  color: Colors.black, fontSize: 10.0),
-                              decoration: InputDecoration(
-                                  // hintText: 'Search',
-                                  hintStyle: TextStyle(
-                                      color: Colors.black, fontSize: 10.0),
-                                  border: InputBorder.none,
-                                  contentPadding:
-                                      EdgeInsets.symmetric(vertical: 13.0)),
-                            ),
-                          ),
-                          Icon(
-                            Icons.search,
-                            color: Colors.black,
-                            size: 20.0,
-                          ),
-                        ],
+                  Padding(
+                    padding: const EdgeInsets.all(4.0),
+                    child: GestureDetector(
+                      onTap: () {},
+                      child: const Icon(
+                        Icons.more_vert,
+                        color: Color(0xFF040404),
                       ),
                     ),
                   ),
                 ],
               ),
-              Padding(
-                padding: const EdgeInsets.only(right: 8.0),
-                child: GestureDetector(
-                  onTap: () {},
-                  child: const Icon(
-                    Icons.notifications_none_rounded,
-                    color: Color(0xFF040404),
+            ],
+            backgroundColor: Colors.transparent,
+            elevation: 0,
+          ),
+          body: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  'Import',
+                  style: GoogleFonts.plusJakartaSans(
+                      color: Colors.black,
+                      fontSize: 24.0,
+                      fontWeight: FontWeight.w700),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 12.0),
+                  child: Text(
+                    'Select image to upload',
+                    style: GoogleFonts.plusJakartaSans(
+                        color: Color(0x99010A10),
+                        fontSize: 16.0,
+                        fontWeight: FontWeight.w600),
                   ),
                 ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(
-                  left: 8.0,
-                  right: 8.0,
+                Padding(
+                  padding: const EdgeInsets.only(
+                    top: 45.0,
+                    bottom: 40.0,
+                  ),
+                  child: Text(
+                    'Step 1 of 3',
+                    style: GoogleFonts.plusJakartaSans(
+                        color: const Color(0xFF010A10),
+                        fontSize: 12.0,
+                        fontWeight: FontWeight.w700),
+                  ),
                 ),
-                child: GestureDetector(
-                  onTap: () {},
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 48.0),
                   child: Container(
+                    width: 201,
+                    height: 178,
                     decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      border: Border.all(
-                        color: const Color(0xFF040404),
-                        width: 2.0, // Adjust the border width as needed
+                      color: Color(0xFFD9D9D9),
+                      borderRadius: BorderRadius.circular(5),
+                    ),
+                    child: IconButton(
+                      icon: Icon(Icons.image),
+                      iconSize: 70,
+                      color: Colors.grey, // Replace with your desired icon
+                      onPressed: () {
+                        // Add your onPressed logic here
+                      },
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(
+                    top: 120.0,
+                    left: 240.0,
+                  ),
+                  child: GestureDetector(
+                    onTap: () {},
+                    child: Container(
+                      width: 133,
+                      height: 40,
+                      decoration: BoxDecoration(
+                        color:
+                            const Color(0xFF2C3A76), // Red color for the button
+                        borderRadius: BorderRadius.circular(
+                            5), // Set the border radius value as you desir/e
+                      ),
+                      child: Center(
+                        child: Text(
+                          'Next',
+                          style: GoogleFonts.plusJakartaSans(
+                            color:
+                                Colors.white, // Text color (white in this case)
+                            fontSize: 16, // Font size of the text
+                            fontWeight:
+                                FontWeight.bold, // Font weight of the text
+                          ),
+                        ),
                       ),
                     ),
-                    child: const Icon(
-                      Icons.question_mark,
-                      size: 20,
-                      color: Color(0xFF040404),
-                    ),
                   ),
                 ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(4.0),
-                child: GestureDetector(
-                  onTap: () {},
-                  child: const Icon(
-                    Icons.more_vert,
-                    color: Color(0xFF040404),
-                  ),
-                ),
-              ),
-            ],
-          ),
-        ],
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(10.0),
-        child: Card(
-          elevation: 4.0, // Elevation for the card
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(10.0), // Rounded corners
-          ),
-          child: Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: DataTable(
-              border: const TableBorder(
-                horizontalInside: BorderSide(
-                    width: 0.7,
-                    color: Color.fromARGB(
-                        255, 123, 127, 131)), // Inner horizontal border
-                verticalInside: BorderSide(
-                    width: 0.7,
-                    color: Color.fromARGB(
-                        255, 123, 127, 131)), // Inner vertical border
-              ),
-              columnSpacing: 30.0,
-              columns: [
-                DataColumn(
-                  label: Text(
-                    'Customer Name',
-                    style: GoogleFonts.plusJakartaSans(
-                        color: Colors.black,
-                        fontSize: 8.0,
-                        fontWeight: FontWeight.w400),
-                  ),
-                ),
-                DataColumn(
-                  label: Text(
-                    'Address',
-                    style: GoogleFonts.plusJakartaSans(
-                        color: Colors.black,
-                        fontSize: 8.0,
-                        fontWeight: FontWeight.w400),
-                  ),
-                ),
-                DataColumn(
-                  label: Text(
-                    'Note',
-                    style: GoogleFonts.plusJakartaSans(
-                        color: Colors.black,
-                        fontSize: 8.0,
-                        fontWeight: FontWeight.w400),
-                  ),
-                ),
-                DataColumn(
-                  label: Text(
-                    'Balance',
-                    style: GoogleFonts.plusJakartaSans(
-                        color: Colors.black,
-                        fontSize: 8.0,
-                        fontWeight: FontWeight.w400),
-                  ),
-                ),
-                DataColumn(
-                  label: Text(
-                    'Action',
-                    style: GoogleFonts.plusJakartaSans(
-                        color: Colors.black,
-                        fontSize: 8.0,
-                        fontWeight: FontWeight.w400),
-                  ),
-                ),
-              ],
-              rows: [
-                DataRow(cells: [
-                  DataCell(
-                    Text(
-                      'Juan Dela Cruz',
-                      style: GoogleFonts.plusJakartaSans(
-                          color: Colors.black,
-                          fontSize: 8.0,
-                          fontWeight: FontWeight.w400),
-                    ),
-                  ),
-                  DataCell(
-                    Text(
-                      'Makati City',
-                      style: GoogleFonts.plusJakartaSans(
-                          color: Colors.black,
-                          fontSize: 8.0,
-                          fontWeight: FontWeight.w400),
-                    ),
-                  ),
-                  DataCell(
-                    Text(
-                      '',
-                      style: GoogleFonts.plusJakartaSans(
-                          color: Colors.black,
-                          fontSize: 8.0,
-                          fontWeight: FontWeight.w400),
-                    ),
-                  ),
-                  DataCell(
-                    Text(
-                      '₱1318.00',
-                      style: GoogleFonts.plusJakartaSans(
-                          color: Colors.black,
-                          fontSize: 8.0,
-                          fontWeight: FontWeight.w400),
-                    ),
-                  ),
-                  DataCell(
-                    Text(
-                      'Pending',
-                      style: GoogleFonts.plusJakartaSans(
-                          color: Colors.black,
-                          fontSize: 8.0,
-                          fontWeight: FontWeight.w400),
-                    ),
-                  ),
-                ]),
-
-                // Add more DataRow widgets here for dynamic data
               ],
             ),
           ),
+          drawer: const NavigationDrawer(),
         ),
       ),
-      drawer: const NavigationDrawer(),
     );
   }
 }

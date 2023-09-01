@@ -11,437 +11,266 @@ class BankReconcile extends StatefulWidget {
 class _BankReconcile extends State<BankReconcile> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        iconTheme: const IconThemeData(color: Colors.black),
-        actions: <Widget>[
-          Row(
-            children: [
-              Stack(
+    return MaterialApp(
+      home: SafeArea(
+        child: Scaffold(
+          appBar: AppBar(
+            iconTheme: const IconThemeData(color: Colors.black),
+            actions: <Widget>[
+              Row(
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.only(right: 45.0),
-                    child: Container(
-                      width: 130,
-                      height: 20,
-                      decoration: BoxDecoration(
-                        color: const Color(0xFF2C3A76),
-                        borderRadius: BorderRadius.circular(20),
-                      ),
-                      child: DropdownButton<String>(
-                        onChanged: (String? newValue) {
-                          // Handle dropdown value change
-                        },
-                        items: <String>[
-                          'Option 1',
-                          'Option 2',
-                          'Option 3',
-                        ].map<DropdownMenuItem<String>>((String value) {
-                          return DropdownMenuItem<String>(
-                            value: value,
-                            child: Text(value),
-                          );
-                        }).toList(),
-                        style: GoogleFonts.plusJakartaSans(
-                          color: const Color(0xFF010A10),
-                          fontSize: 10.0,
-                        ),
-                        underline: Container(
-                          color: Colors.transparent,
-                        ),
-                        icon: Transform.translate(
-                          offset: const Offset(
-                              -2, -2), // Adjust the Y offset as needed
-                          child: const Icon(
-                            Icons.arrow_drop_down,
-                            color: Colors.white,
+                  Stack(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(right: 45.0),
+                        child: Container(
+                          width: 130,
+                          height: 20,
+                          decoration: BoxDecoration(
+                            color: const Color(0xFF2C3A76),
+                            borderRadius: BorderRadius.circular(20),
                           ),
-                        ),
-                        hint: Padding(
-                          padding: const EdgeInsets.only(left: 10.0),
-                          child: Text(
-                            'Categories',
+                          child: DropdownButton<String>(
+                            onChanged: (String? newValue) {
+                              // Handle dropdown value change
+                            },
+                            items: <String>[
+                              'Option 1',
+                              'Option 2',
+                              'Option 3',
+                            ].map<DropdownMenuItem<String>>((String value) {
+                              return DropdownMenuItem<String>(
+                                value: value,
+                                child: Text(value),
+                              );
+                            }).toList(),
                             style: GoogleFonts.plusJakartaSans(
+                              color: const Color(0xFF010A10),
+                              fontSize: 10.0,
+                            ),
+                            underline: Container(
+                              color: Colors.transparent,
+                            ),
+                            icon: Transform.translate(
+                              offset: const Offset(
+                                  -2, -2), // Adjust the Y offset as needed
+                              child: const Icon(
+                                Icons.arrow_drop_down,
                                 color: Colors.white,
-                                fontSize: 10.0,
-                                fontWeight: FontWeight.w600),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  Positioned(
-                    right: 10.0,
-                    top: 0.0, // Adjust this value to control overlap amount
-                    child: Container(
-                      width: 80,
-                      height: 20,
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: const BorderRadius.only(
-                          topRight: Radius.circular(10.0),
-                          bottomLeft: Radius.circular(10.0),
-                        ),
-                        border: Border.all(
-                          color: Colors.black, // Set the border color
-                          width: 0.1, // Set the border width
-                        ),
-                      ),
-                      child: const Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          SizedBox(
-                            width: 5.0,
-                          ),
-                          Expanded(
-                            child: TextField(
-                              style: TextStyle(
-                                  color: Colors.black, fontSize: 10.0),
-                              decoration: InputDecoration(
-                                  // hintText: 'Search',
-                                  hintStyle: TextStyle(
-                                      color: Colors.black, fontSize: 10.0),
-                                  border: InputBorder.none,
-                                  contentPadding:
-                                      EdgeInsets.symmetric(vertical: 13.0)),
+                              ),
+                            ),
+                            hint: Padding(
+                              padding: const EdgeInsets.only(left: 10.0),
+                              child: Text(
+                                'Categories',
+                                style: GoogleFonts.plusJakartaSans(
+                                    color: Colors.white,
+                                    fontSize: 10.0,
+                                    fontWeight: FontWeight.w600),
+                              ),
                             ),
                           ),
-                          Icon(
-                            Icons.search,
-                            color: Colors.black,
-                            size: 20.0,
+                        ),
+                      ),
+                      Positioned(
+                        right: 10.0,
+                        top: 0.0, // Adjust this value to control overlap amount
+                        child: Container(
+                          width: 80,
+                          height: 20,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: const BorderRadius.only(
+                              topRight: Radius.circular(10.0),
+                              bottomLeft: Radius.circular(10.0),
+                            ),
+                            border: Border.all(
+                              color: Colors.black, // Set the border color
+                              width: 0.1, // Set the border width
+                            ),
                           ),
-                        ],
+                          child: const Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              SizedBox(
+                                width: 5.0,
+                              ),
+                              Expanded(
+                                child: TextField(
+                                  style: TextStyle(
+                                      color: Colors.black, fontSize: 10.0),
+                                  decoration: InputDecoration(
+                                      // hintText: 'Search',
+                                      hintStyle: TextStyle(
+                                          color: Colors.black, fontSize: 10.0),
+                                      border: InputBorder.none,
+                                      contentPadding:
+                                          EdgeInsets.symmetric(vertical: 13.0)),
+                                ),
+                              ),
+                              Icon(
+                                Icons.search,
+                                color: Colors.black,
+                                size: 20.0,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(right: 8.0),
+                    child: GestureDetector(
+                      onTap: () {},
+                      child: const Icon(
+                        Icons.notifications_none_rounded,
+                        color: Color(0xFF040404),
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(
+                      left: 8.0,
+                      right: 8.0,
+                    ),
+                    child: GestureDetector(
+                      onTap: () {},
+                      child: Container(
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          border: Border.all(
+                            color: const Color(0xFF040404),
+                            width: 2.0, // Adjust the border width as needed
+                          ),
+                        ),
+                        child: const Icon(
+                          Icons.question_mark,
+                          size: 20,
+                          color: Color(0xFF040404),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(4.0),
+                    child: GestureDetector(
+                      onTap: () {},
+                      child: const Icon(
+                        Icons.more_vert,
+                        color: Color(0xFF040404),
                       ),
                     ),
                   ),
                 ],
               ),
-              Padding(
-                padding: const EdgeInsets.only(right: 8.0),
-                child: GestureDetector(
-                  onTap: () {},
-                  child: const Icon(
-                    Icons.notifications_none_rounded,
-                    color: Color(0xFF040404),
-                  ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(
-                  left: 8.0,
-                  right: 8.0,
-                ),
-                child: GestureDetector(
-                  onTap: () {},
-                  child: Container(
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      border: Border.all(
-                        color: const Color(0xFF040404),
-                        width: 2.0, // Adjust the border width as needed
-                      ),
-                    ),
-                    child: const Icon(
-                      Icons.question_mark,
-                      size: 20,
-                      color: Color(0xFF040404),
-                    ),
-                  ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(4.0),
-                child: GestureDetector(
-                  onTap: () {},
-                  child: const Icon(
-                    Icons.more_vert,
-                    color: Color(0xFF040404),
-                  ),
-                ),
-              ),
             ],
+            backgroundColor: Colors.transparent,
+            elevation: 0,
           ),
-        ],
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-      ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Padding(
-            padding: const EdgeInsets.only(right: 15.0),
-            child: Row(
-              mainAxisAlignment:
-                  MainAxisAlignment.end, // Adjust spacing as needed
-              children: [
-                GestureDetector(
-                  onTap: () {
-                    setState(() {});
-                  },
-                  child: Container(
-                    width: 87,
-                    height: 24,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(5.0),
-                      border: Border.all(
-                        color: const Color(0xFF02C165),
-                        width: 0.5, // Adjust the border width as needed
+          body: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(right: 15.0),
+                child: Row(
+                  mainAxisAlignment:
+                      MainAxisAlignment.end, // Adjust spacing as needed
+                  children: [
+                    GestureDetector(
+                      onTap: () {
+                        setState(() {});
+                      },
+                      child: Container(
+                        width: 87,
+                        height: 24,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(5.0),
+                          border: Border.all(
+                            color: const Color(0xFF02C165),
+                            width: 0.5, // Adjust the border width as needed
+                          ),
+                        ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              'Edit Info',
+                              style: GoogleFonts.plusJakartaSans(
+                                  color: Colors.black,
+                                  fontSize: 8.0,
+                                  fontWeight: FontWeight.w500),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          'Edit Info',
-                          style: GoogleFonts.plusJakartaSans(
-                              color: Colors.black,
-                              fontSize: 8.0,
-                              fontWeight: FontWeight.w500),
+                    const SizedBox(
+                      width: 15.0,
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        setState(() {});
+                      },
+                      child: Container(
+                        width: 87,
+                        height: 24,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(5.0),
+                          color: const Color(0xFF02C165),
                         ),
-                      ],
-                    ),
-                  ),
-                ),
-                const SizedBox(
-                  width: 15.0,
-                ),
-                GestureDetector(
-                  onTap: () {
-                    setState(() {});
-                  },
-                  child: Container(
-                    width: 87,
-                    height: 24,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(5.0),
-                      color: const Color(0xFF02C165),
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          'Save for later',
-                          style: GoogleFonts.plusJakartaSans(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              'Save for later',
+                              style: GoogleFonts.plusJakartaSans(
+                                  color: Colors.white,
+                                  fontSize: 8.0,
+                                  fontWeight: FontWeight.w500),
+                            ),
+                            const Icon(
+                              Icons.arrow_drop_down,
                               color: Colors.white,
-                              fontSize: 8.0,
-                              fontWeight: FontWeight.w500),
+                              size: 20.0,
+                            ),
+                          ],
                         ),
-                        const Icon(
-                          Icons.arrow_drop_down,
-                          color: Colors.white,
-                          size: 20.0,
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(top: 25.0, left: 25.0, right: 25.0),
-            child: Text(
-              'Cash and cash equivalent',
-              style: GoogleFonts.plusJakartaSans(
-                  color: const Color(0xFF010A10),
-                  fontSize: 14.0,
-                  fontWeight: FontWeight.w600),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(top: 10.0, left: 25.0, right: 25.0),
-            child: Text(
-              'Statement ending date: August 14, 2023',
-              style: GoogleFonts.plusJakartaSans(
-                  color: const Color(0xFF010A10),
-                  fontSize: 10.0,
-                  fontWeight: FontWeight.w400),
-            ),
-          ),
-          Row(
-            children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(
-                        top: 25.0, left: 25.0, right: 10.0),
-                    child: Text(
-                      '₱10,000.00',
-                      style: GoogleFonts.plusJakartaSans(
-                          color: const Color(0xFF010A10),
-                          fontSize: 14.0,
-                          fontWeight: FontWeight.w700),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(
-                        top: 5.0, left: 25.0, right: 10.0),
-                    child: Text(
-                      'Statement Ending Balance',
-                      style: GoogleFonts.plusJakartaSans(
-                          color: const Color(0xFF010A10),
-                          fontSize: 8.0,
-                          fontWeight: FontWeight.w400),
-                    ),
-                  ),
-                ],
-              ),
-              Transform.translate(
-                offset: const Offset(2, 6),
-                child: const Icon(
-                  Icons.remove,
-                  size: 36,
-                  color: Colors.black,
-                ),
-              ),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(
-                        top: 25.0, left: 25.0, right: 10.0),
-                    child: Text(
-                      '₱0.00',
-                      style: GoogleFonts.plusJakartaSans(
-                          color: const Color(0xFF010A10),
-                          fontSize: 14.0,
-                          fontWeight: FontWeight.w700),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(
-                        top: 5.0, left: 25.0, right: 10.0),
-                    child: Text(
-                      'Cleared Balance',
-                      style: GoogleFonts.plusJakartaSans(
-                          color: const Color(0xFF010A10),
-                          fontSize: 8.0,
-                          fontWeight: FontWeight.w400),
-                    ),
-                  ),
-                ],
-              ),
-            ],
-          ),
-          const Padding(
-            padding: EdgeInsets.only(bottom: 5.0, left: 25.0, right: 25.0),
-            child: Divider(
-              thickness: 0.5,
-            ),
-          ),
-          Row(
-            children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(
-                        top: 0.0, left: 25.0, right: 10.0),
-                    child: Text(
-                      '₱0.00',
-                      style: GoogleFonts.plusJakartaSans(
-                          color: const Color(0xFF010A10),
-                          fontSize: 14.0,
-                          fontWeight: FontWeight.w700),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(
-                        top: 0.0, left: 25.0, right: 10.0),
-                    child: Text(
-                      'Beginning Balance',
-                      style: GoogleFonts.plusJakartaSans(
-                          color: const Color(0xFF010A10),
-                          fontSize: 8.0,
-                          fontWeight: FontWeight.w400),
-                    ),
-                  ),
-                ],
-              ),
-              const SizedBox(
-                width: 90,
-              ),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Padding(
-                    padding:
-                        const EdgeInsets.only(top: 0.0, left: 0.0, right: 10.0),
-                    child: Text(
-                      '₱0.00',
-                      style: GoogleFonts.plusJakartaSans(
-                          color: const Color(0xFF010A10),
-                          fontSize: 14.0,
-                          fontWeight: FontWeight.w700),
-                    ),
-                  ),
-                  Padding(
-                    padding:
-                        const EdgeInsets.only(top: 0.0, left: 0.0, right: 10.0),
-                    child: Text(
-                      '0 Payments',
-                      style: GoogleFonts.plusJakartaSans(
-                          color: const Color(0xFF010A10),
-                          fontSize: 8.0,
-                          fontWeight: FontWeight.w400),
-                    ),
-                  ),
-                ],
-              ),
-              Transform.translate(
-                offset: const Offset(2, 0),
-                child: const Icon(
-                  Icons.add,
-                  size: 36,
-                  color: Colors.black,
-                ),
-              ),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Padding(
-                    padding:
-                        const EdgeInsets.only(top: 0.0, left: 15.0, right: 0.0),
-                    child: Text(
-                      '₱0.00',
-                      style: GoogleFonts.plusJakartaSans(
-                          color: const Color(0xFF010A10),
-                          fontSize: 14.0,
-                          fontWeight: FontWeight.w700),
-                    ),
-                  ),
-                  Padding(
-                    padding:
-                        const EdgeInsets.only(top: 0.0, left: 15.0, right: 0.0),
-                    child: Text(
-                      '0 Deposits',
-                      style: GoogleFonts.plusJakartaSans(
-                          color: const Color(0xFF010A10),
-                          fontSize: 8.0,
-                          fontWeight: FontWeight.w400),
-                    ),
-                  ),
-                ],
-              ),
-            ],
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              SizedBox(
-                width: 200,
-                child: Padding(
-                  padding:
-                      const EdgeInsets.only(top: 25.0, left: 25.0, right: 25.0),
-                  child: Column(
-                    children: [
-                      const Divider(
-                        thickness: 0.5,
                       ),
+                    ),
+                  ],
+                ),
+              ),
+              Padding(
+                padding:
+                    const EdgeInsets.only(top: 25.0, left: 25.0, right: 25.0),
+                child: Text(
+                  'Cash and cash equivalent',
+                  style: GoogleFonts.plusJakartaSans(
+                      color: const Color(0xFF010A10),
+                      fontSize: 14.0,
+                      fontWeight: FontWeight.w600),
+                ),
+              ),
+              Padding(
+                padding:
+                    const EdgeInsets.only(top: 10.0, left: 25.0, right: 25.0),
+                child: Text(
+                  'Statement ending date: August 14, 2023',
+                  style: GoogleFonts.plusJakartaSans(
+                      color: const Color(0xFF010A10),
+                      fontSize: 10.0,
+                      fontWeight: FontWeight.w400),
+                ),
+              ),
+              Row(
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
                       Padding(
-                        padding: const EdgeInsets.only(top: 3.0),
+                        padding: const EdgeInsets.only(
+                            top: 25.0, left: 25.0, right: 10.0),
                         child: Text(
                           '₱10,000.00',
                           style: GoogleFonts.plusJakartaSans(
@@ -451,7 +280,8 @@ class _BankReconcile extends State<BankReconcile> {
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.only(top: 5.0),
+                        padding: const EdgeInsets.only(
+                            top: 5.0, left: 25.0, right: 10.0),
                         child: Text(
                           'Statement Ending Balance',
                           style: GoogleFonts.plusJakartaSans(
@@ -462,54 +292,230 @@ class _BankReconcile extends State<BankReconcile> {
                       ),
                     ],
                   ),
-                ),
-              ),
-            ],
-          ),
-          Stack(
-            children: [
-              Padding(
-                padding:
-                    const EdgeInsets.only(top: 35, left: 25.0, right: 25.0),
-                child: Container(
-                  height: 24,
-                  decoration: const BoxDecoration(
-                    color: Color(0xFF2C3A76),
+                  Transform.translate(
+                    offset: const Offset(2, 6),
+                    child: const Icon(
+                      Icons.remove,
+                      size: 36,
+                      color: Colors.black,
+                    ),
                   ),
-                ),
-              ),
-              Positioned(
-                top: 0.0,
-                left: 0.0,
-                child: Row(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(
-                          top: 35, left: 25.0, right: 25.0),
-                      child: Container(
-                        width: 335,
-                        height: 15,
-                        decoration: const BoxDecoration(
-                          color: Colors.white,
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(
+                            top: 25.0, left: 25.0, right: 10.0),
+                        child: Text(
+                          '₱0.00',
+                          style: GoogleFonts.plusJakartaSans(
+                              color: const Color(0xFF010A10),
+                              fontSize: 14.0,
+                              fontWeight: FontWeight.w700),
                         ),
                       ),
+                      Padding(
+                        padding: const EdgeInsets.only(
+                            top: 5.0, left: 25.0, right: 10.0),
+                        child: Text(
+                          'Cleared Balance',
+                          style: GoogleFonts.plusJakartaSans(
+                              color: const Color(0xFF010A10),
+                              fontSize: 8.0,
+                              fontWeight: FontWeight.w400),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+              const Padding(
+                padding: EdgeInsets.only(bottom: 5.0, left: 25.0, right: 25.0),
+                child: Divider(
+                  thickness: 0.5,
+                ),
+              ),
+              Row(
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(
+                            top: 0.0, left: 25.0, right: 10.0),
+                        child: Text(
+                          '₱0.00',
+                          style: GoogleFonts.plusJakartaSans(
+                              color: const Color(0xFF010A10),
+                              fontSize: 14.0,
+                              fontWeight: FontWeight.w700),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(
+                            top: 0.0, left: 25.0, right: 10.0),
+                        child: Text(
+                          'Beginning Balance',
+                          style: GoogleFonts.plusJakartaSans(
+                              color: const Color(0xFF010A10),
+                              fontSize: 8.0,
+                              fontWeight: FontWeight.w400),
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(
+                    width: 90,
+                  ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(
+                            top: 0.0, left: 0.0, right: 10.0),
+                        child: Text(
+                          '₱0.00',
+                          style: GoogleFonts.plusJakartaSans(
+                              color: const Color(0xFF010A10),
+                              fontSize: 14.0,
+                              fontWeight: FontWeight.w700),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(
+                            top: 0.0, left: 0.0, right: 10.0),
+                        child: Text(
+                          '0 Payments',
+                          style: GoogleFonts.plusJakartaSans(
+                              color: const Color(0xFF010A10),
+                              fontSize: 8.0,
+                              fontWeight: FontWeight.w400),
+                        ),
+                      ),
+                    ],
+                  ),
+                  Transform.translate(
+                    offset: const Offset(2, 0),
+                    child: const Icon(
+                      Icons.add,
+                      size: 36,
+                      color: Colors.black,
                     ),
-                    Transform.translate(
-                      offset: const Offset(-22, 21),
-                      child: const Icon(
-                        Icons.arrow_drop_up_outlined,
-                        size: 20,
-                        color: Colors.white,
+                  ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(
+                            top: 0.0, left: 15.0, right: 0.0),
+                        child: Text(
+                          '₱0.00',
+                          style: GoogleFonts.plusJakartaSans(
+                              color: const Color(0xFF010A10),
+                              fontSize: 14.0,
+                              fontWeight: FontWeight.w700),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(
+                            top: 0.0, left: 15.0, right: 0.0),
+                        child: Text(
+                          '0 Deposits',
+                          style: GoogleFonts.plusJakartaSans(
+                              color: const Color(0xFF010A10),
+                              fontSize: 8.0,
+                              fontWeight: FontWeight.w400),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  SizedBox(
+                    width: 200,
+                    child: Padding(
+                      padding: const EdgeInsets.only(
+                          top: 25.0, left: 25.0, right: 25.0),
+                      child: Column(
+                        children: [
+                          const Divider(
+                            thickness: 0.5,
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(top: 3.0),
+                            child: Text(
+                              '₱10,000.00',
+                              style: GoogleFonts.plusJakartaSans(
+                                  color: const Color(0xFF010A10),
+                                  fontSize: 14.0,
+                                  fontWeight: FontWeight.w700),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(top: 5.0),
+                            child: Text(
+                              'Statement Ending Balance',
+                              style: GoogleFonts.plusJakartaSans(
+                                  color: const Color(0xFF010A10),
+                                  fontSize: 8.0,
+                                  fontWeight: FontWeight.w400),
+                            ),
+                          ),
+                        ],
                       ),
                     ),
-                  ],
-                ),
+                  ),
+                ],
+              ),
+              Stack(
+                children: [
+                  Padding(
+                    padding:
+                        const EdgeInsets.only(top: 35, left: 25.0, right: 25.0),
+                    child: Container(
+                      height: 24,
+                      decoration: const BoxDecoration(
+                        color: Color(0xFF2C3A76),
+                      ),
+                    ),
+                  ),
+                  Positioned(
+                    top: 0.0,
+                    left: 0.0,
+                    child: Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(
+                              top: 35, left: 25.0, right: 25.0),
+                          child: Container(
+                            width: 335,
+                            height: 15,
+                            decoration: const BoxDecoration(
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                        Transform.translate(
+                          offset: const Offset(-22, 21),
+                          child: const Icon(
+                            Icons.arrow_drop_up_outlined,
+                            size: 20,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
               ),
             ],
           ),
-        ],
+          drawer: const NavigationDrawer(),
+        ),
       ),
-      drawer: const NavigationDrawer(),
     );
   }
 }

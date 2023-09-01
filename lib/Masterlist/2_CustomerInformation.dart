@@ -1,16 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:smart_ledger_ai/Registration/LoginScreen.dart';
 
-class CustomerImportImagePage extends StatefulWidget {
-  const CustomerImportImagePage({super.key});
+class CustomerInformation extends StatefulWidget {
+  const CustomerInformation({super.key});
 
   @override
-  State<CustomerImportImagePage> createState() =>
-      _CustomerImportImagePageState();
+  State<CustomerInformation> createState() => _CustomerInformationState();
 }
 
-class _CustomerImportImagePageState extends State<CustomerImportImagePage> {
+class _CustomerInformationState extends State<CustomerInformation> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -171,86 +169,185 @@ class _CustomerImportImagePageState extends State<CustomerImportImagePage> {
             backgroundColor: Colors.transparent,
             elevation: 0,
           ),
-          body: Center(
+          body: Padding(
+            padding: const EdgeInsets.only(top: 10.0, left: 20.0, right: 20.0),
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text(
-                  'Import',
-                  style: TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
-                    color: Color(0xFF1D1D1F),
-                  ),
-                ),
-                const Text(
-                  'Select image to upload',
-                  style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.normal,
-                    color: Color(0xFF1D1D1F),
-                  ),
-                ),
-                const Padding(
-                  padding: EdgeInsets.only(
-                    top: 40.0,
-                    bottom: 40.0,
-                  ),
-                  child: Text(
-                    'Step 1 of 3',
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.normal,
-                      color: Color(0xFF1D1D1F),
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(bottom: 48.0),
-                  child: Container(
-                    width: 120,
-                    height: 120,
-                    decoration: BoxDecoration(
-                      color: Color(0xFFD9D9D9),
-                      borderRadius: BorderRadius.circular(15),
-                    ),
-                    child: IconButton(
-                      icon: Icon(Icons.image), // Replace with your desired icon
-                      onPressed: () {
-                        // Add your onPressed logic here
-                      },
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(
-                    top: 120.0,
-                    left: 240.0,
-                  ),
-                  child: GestureDetector(
-                    onTap: () {},
-                    child: Container(
-                      width: 133,
-                      height: 40,
-                      decoration: BoxDecoration(
-                        color:
-                            const Color(0xFF2C3A76), // Red color for the button
-                        borderRadius: BorderRadius.circular(
-                            5), // Set the border radius value as you desir/e
-                      ),
-                      child: Center(
-                        child: Text(
-                          'Next',
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Juan Dela Cruz',
                           style: GoogleFonts.plusJakartaSans(
-                            color:
-                                Colors.white, // Text color (white in this case)
-                            fontSize: 16, // Font size of the text
-                            fontWeight:
-                                FontWeight.bold, // Font weight of the text
+                              color: Colors.black,
+                              fontSize: 14.0,
+                              fontWeight: FontWeight.w700),
+                        ),
+                        const SizedBox(
+                          height: 8,
+                        ),
+                        GestureDetector(
+                          onTap: () {},
+                          child: Text(
+                            'Add Note',
+                            style: GoogleFonts.plusJakartaSans(
+                              color: const Color(0xFF0094FF),
+                              fontSize: 10.0,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    Transform.translate(
+                      offset: const Offset(0, -6),
+                      child: GestureDetector(
+                        onTap: () {
+                          setState(() {});
+                        },
+                        child: Container(
+                          width: 96,
+                          height: 26,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(5.0),
+                            color: const Color(0xFF2C3A76),
+                          ),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                'Save for later',
+                                style: GoogleFonts.plusJakartaSans(
+                                    color: Colors.white,
+                                    fontSize: 8.0,
+                                    fontWeight: FontWeight.w500),
+                              ),
+                              Transform.translate(
+                                offset: const Offset(6, 0),
+                                child: const Icon(
+                                  Icons.arrow_drop_down,
+                                  size: 20.0,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ],
                           ),
                         ),
                       ),
                     ),
+                  ],
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: DataTable(
+                    border: const TableBorder(
+                      verticalInside: BorderSide(
+                          width: 0.7,
+                          color: Colors.grey), // Inner vertical border
+                    ),
+                    columnSpacing: 30.0,
+                    columns: [
+                      DataColumn(
+                        label: Text(
+                          'PHP0.00',
+                          style: GoogleFonts.plusJakartaSans(
+                              color: Colors.black,
+                              fontSize: 12.0,
+                              fontWeight: FontWeight.w500),
+                        ),
+                      ),
+                      DataColumn(
+                        label: Text(
+                          'PHP0.00',
+                          style: GoogleFonts.plusJakartaSans(
+                              color: Colors.black,
+                              fontSize: 12.0,
+                              fontWeight: FontWeight.w500),
+                        ),
+                      ),
+                      DataColumn(
+                        label: Text(
+                          'PHP0.00',
+                          style: GoogleFonts.plusJakartaSans(
+                              color: Colors.black,
+                              fontSize: 12.0,
+                              fontWeight: FontWeight.w500),
+                        ),
+                      ),
+                      DataColumn(
+                        label: Text(
+                          'PHP0.00',
+                          style: GoogleFonts.plusJakartaSans(
+                              color: Colors.black,
+                              fontSize: 12.0,
+                              fontWeight: FontWeight.w500),
+                        ),
+                      ),
+                      DataColumn(
+                        label: Text(
+                          'PHP0.00',
+                          style: GoogleFonts.plusJakartaSans(
+                              color: Colors.black,
+                              fontSize: 12.0,
+                              fontWeight: FontWeight.w500),
+                        ),
+                      ),
+                    ],
+                    rows: [
+                      DataRow(
+                        cells: [
+                          DataCell(
+                            Text(
+                              'Estimate',
+                              style: GoogleFonts.plusJakartaSans(
+                                  color: Colors.black,
+                                  fontSize: 8.0,
+                                  fontWeight: FontWeight.w400),
+                            ),
+                          ),
+                          DataCell(
+                            Text(
+                              '0 unbilled \nActivity',
+                              style: GoogleFonts.plusJakartaSans(
+                                  color: Colors.black,
+                                  fontSize: 8.0,
+                                  fontWeight: FontWeight.w400),
+                            ),
+                          ),
+                          DataCell(
+                            Text(
+                              '1 overdue',
+                              style: GoogleFonts.plusJakartaSans(
+                                  color: Colors.black,
+                                  fontSize: 8.0,
+                                  fontWeight: FontWeight.w400),
+                            ),
+                          ),
+                          DataCell(
+                            Text(
+                              '1 open invoice',
+                              style: GoogleFonts.plusJakartaSans(
+                                  color: Colors.black,
+                                  fontSize: 8.0,
+                                  fontWeight: FontWeight.w400),
+                            ),
+                          ),
+                          DataCell(
+                            Text(
+                              '0 paid last \n30 days',
+                              style: GoogleFonts.plusJakartaSans(
+                                  color: Colors.black,
+                                  fontSize: 8.0,
+                                  fontWeight: FontWeight.w400),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
                   ),
                 ),
               ],

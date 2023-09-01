@@ -13,6 +13,7 @@ dependencies:
   google_fonts: ^5.1.0
   image_picker: ^0.8.4+2
   flutter_custom_clippers: ^2.0.0
+  flutter_speed_dial:
   
 
 dev_dependencies:
