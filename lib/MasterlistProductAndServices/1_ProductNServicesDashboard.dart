@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:smart_ledger_ai/MasterlistProductAndServices/2_ProductNServicesChoices.dart';
 
 class ProductNServicesDashboard extends StatefulWidget {
   const ProductNServicesDashboard({super.key});
@@ -17,7 +18,14 @@ class _ProductNServicesDashboard extends State<ProductNServicesDashboard> {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          // Add your onPressed logic here
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) {
+                return const ProductNServicesChoices();
+              },
+            ),
+          );
         },
         backgroundColor: const Color(0xFFD9D9D9),
         child: Container(

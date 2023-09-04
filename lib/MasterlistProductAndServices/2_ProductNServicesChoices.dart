@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:smart_ledger_ai/MasterlistProductAndServices/1_ProductNServicesDashboard.dart';
+import 'package:smart_ledger_ai/MasterlistProductAndServices/3_NonInventory.dart';
 
 class ProductNServicesChoices extends StatefulWidget {
   const ProductNServicesChoices({super.key});
@@ -21,37 +23,49 @@ class _ProductNServicesChoices extends State<ProductNServicesChoices> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Container(
-                    width: 24,
-                    height: 24,
-                    decoration: const BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: Color(0xFF2C3A76),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return const ProductNServicesDashboard();
+                      },
                     ),
-                    child: Transform.translate(
-                      offset: const Offset(0,
-                          0), // Adjust the Y offset as needed to center the icon
-                      child: const Icon(
-                        Icons.arrow_back,
-                        color: Colors.white,
-                        size: 20,
+                  );
+                },
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Container(
+                      width: 24,
+                      height: 24,
+                      decoration: const BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: Color(0xFF2C3A76),
+                      ),
+                      child: Transform.translate(
+                        offset: const Offset(0,
+                            0), // Adjust the Y offset as needed to center the icon
+                        child: const Icon(
+                          Icons.arrow_back,
+                          color: Colors.white,
+                          size: 20,
+                        ),
                       ),
                     ),
-                  ),
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  Text(
-                    'Product and Services Information',
-                    style: GoogleFonts.plusJakartaSans(
-                        color: Colors.black,
-                        fontSize: 14.0,
-                        fontWeight: FontWeight.w600),
-                  ),
-                ],
+                  ],
+                ),
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              Text(
+                'Product and Services Information',
+                style: GoogleFonts.plusJakartaSans(
+                    color: Colors.black,
+                    fontSize: 14.0,
+                    fontWeight: FontWeight.w600),
               ),
               const SizedBox(
                 height: 40,
@@ -59,8 +73,8 @@ class _ProductNServicesChoices extends State<ProductNServicesChoices> {
               GridView.count(
                 shrinkWrap: true,
                 crossAxisCount: 2, // Number of columns
-                crossAxisSpacing: 10.0, // Spacing between columns
-                mainAxisSpacing: 10.0,
+                crossAxisSpacing: 20.0, // Spacing between columns
+                mainAxisSpacing: 20.0,
                 childAspectRatio: 0.9, // Spacing between rows
                 children: [
                   Container(
@@ -75,14 +89,14 @@ class _ProductNServicesChoices extends State<ProductNServicesChoices> {
                     ),
                     child: GestureDetector(
                       onTap: () {
-                        // Navigator.push(
-                        //   context,
-                        //   MaterialPageRoute(
-                        //     builder: (context) {
-                        //       return YourDestinationPage();
-                        //     },
-                        //   ),
-                        // );
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) {
+                              return const NonInventory();
+                            },
+                          ),
+                        );
                       },
                       child: Center(
                         child: Padding(
@@ -285,6 +299,19 @@ class _ProductNServicesChoices extends State<ProductNServicesChoices> {
                                   textAlign: TextAlign.center,
                                   style: GoogleFonts.plusJakartaSans(
                                       color: Colors.black,
+                                      fontSize: 10.0,
+                                      fontWeight: FontWeight.w400),
+                                ),
+                              ),
+                              const SizedBox(
+                                height: 20,
+                              ),
+                              Center(
+                                child: Text(
+                                  'Turn on inventory tracking',
+                                  textAlign: TextAlign.center,
+                                  style: GoogleFonts.plusJakartaSans(
+                                      color: const Color(0xFF0083EB),
                                       fontSize: 10.0,
                                       fontWeight: FontWeight.w400),
                                 ),
