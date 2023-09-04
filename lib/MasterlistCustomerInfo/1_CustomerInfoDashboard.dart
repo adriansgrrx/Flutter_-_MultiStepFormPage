@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';
-import 'package:smart_ledger_ai/Masterlist/3_CustomerImportImage.dart';
+import 'package:smart_ledger_ai/MasterlistCustomerInfo/3_CustomerImportImage.dart';
 
 class CustomerInfoDashboard extends StatefulWidget {
   const CustomerInfoDashboard({super.key});
