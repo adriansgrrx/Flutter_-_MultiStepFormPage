@@ -13,7 +13,8 @@ import 'package:smart_ledger_ai/Dashboard/MainDashboard.dart';
 import 'package:smart_ledger_ai/MasterlistProductAndServices/1_ProductNServicesDashboard.dart';
 import 'package:smart_ledger_ai/MasterlistProductAndServices/2_ProductNServicesChoices.dart';
 import 'package:smart_ledger_ai/MasterlistProductAndServices/3_NonInventory.dart';
-import 'package:smart_ledger_ai/MasterlistProductAndServices/test.dart';
+import 'package:smart_ledger_ai/MasterlistProductAndServices/4_Service.dart';
+import 'package:smart_ledger_ai/MasterlistProductAndServices/5_Bundle.dart';
 import 'package:smart_ledger_ai/PurchasesAPV/1_PurchasesAPV.dart';
 import 'package:smart_ledger_ai/SettingsPreferences/1_SettingsPreferences.dart';
 
@@ -30,7 +31,7 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: NonInventory(),
+      home: Bundle(),
     );
   }
 }

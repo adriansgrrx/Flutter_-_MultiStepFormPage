@@ -38,7 +38,16 @@ class _ProductNServicesDashboard extends State<ProductNServicesDashboard> {
             color: const Color(0xFF2C3A76),
           ),
           child: IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) {
+                    return const ProductNServicesChoices();
+                  },
+                ),
+              );
+            },
             icon: const Icon(
               Icons.add,
               color: Colors.white,
