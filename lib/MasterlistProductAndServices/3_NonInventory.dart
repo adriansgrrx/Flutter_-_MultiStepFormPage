@@ -19,6 +19,7 @@ class _NonInventory extends State<NonInventory> {
     return SafeArea(
       child: Scaffold(
         backgroundColor: const Color(0xFFFFFBF2),
+        resizeToAvoidBottomInset: false,
         body: Padding(
           padding: const EdgeInsets.only(
               top: 15.0, bottom: 0.0, left: 15.0, right: 15.0),
@@ -90,7 +91,7 @@ class _NonInventory extends State<NonInventory> {
                     ),
                   ),
                   const SizedBox(
-                    height: 50,
+                    height: 30,
                   ),
                 ],
               ),
@@ -241,15 +242,37 @@ class _NonInventory extends State<NonInventory> {
                               },
                             ),
                           ),
+                          const SizedBox(
+                            height: 20,
+                          ),
                           Row(
                             children: [
-                              Checkbox(
-                                value: isChecked,
-                                onChanged: (bool? newValue) {
+                              GestureDetector(
+                                onTap: () {
                                   setState(() {
-                                    isChecked = newValue ?? false;
+                                    isChecked = !isChecked;
                                   });
                                 },
+                                child: Container(
+                                  width: 15.0,
+                                  height: 15.0,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(5.0),
+                                    color: isChecked
+                                        ? Colors.blue
+                                        : const Color(0xFFD9D9D9),
+                                  ),
+                                  child: isChecked
+                                      ? const Icon(
+                                          Icons.check,
+                                          color: Colors.white,
+                                          size: 10,
+                                        )
+                                      : null,
+                                ),
+                              ),
+                              const SizedBox(
+                                width: 10,
                               ),
                               Text(
                                 'I sell this product/service to my customers.',
@@ -259,6 +282,9 @@ class _NonInventory extends State<NonInventory> {
                                 ),
                               ),
                             ],
+                          ),
+                          const SizedBox(
+                            height: 20,
                           ),
                         ],
                       ),
@@ -392,15 +418,37 @@ class _NonInventory extends State<NonInventory> {
                               },
                             ),
                           ),
+                          const SizedBox(
+                            height: 20,
+                          ),
                           Row(
                             children: [
-                              Checkbox(
-                                value: isChecked,
-                                onChanged: (bool? newValue) {
+                              GestureDetector(
+                                onTap: () {
                                   setState(() {
-                                    isChecked = newValue ?? false;
+                                    isChecked = !isChecked;
                                   });
                                 },
+                                child: Container(
+                                  width: 15.0,
+                                  height: 15.0,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(5.0),
+                                    color: isChecked
+                                        ? Colors.blue
+                                        : const Color(0xFFD9D9D9),
+                                  ),
+                                  child: isChecked
+                                      ? const Icon(
+                                          Icons.check,
+                                          color: Colors.white,
+                                          size: 10,
+                                        )
+                                      : null,
+                                ),
+                              ),
+                              const SizedBox(
+                                width: 10,
                               ),
                               Text(
                                 'I purchase this product/service from a supplier.',
@@ -445,7 +493,7 @@ class _NonInventory extends State<NonInventory> {
                     ),
                   ),
                 ),
-              )
+              ),
             ],
           ),
         ),
