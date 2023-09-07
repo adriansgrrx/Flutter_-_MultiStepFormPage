@@ -519,9 +519,7 @@ class _Bundle extends State<Bundle> {
                                 if (index > 0)
                                   ElevatedButton(
                                     onPressed: () {
-                                      setState(() {
-                                        currentIndex--;
-                                      });
+                                      goToPage(index - 1);
                                       _pageController.animateToPage(
                                         currentIndex,
                                         duration: Duration(milliseconds: 300),
@@ -550,14 +548,19 @@ class _Bundle extends State<Bundle> {
                                 if (index < pageCount)
                                   ElevatedButton(
                                     onPressed: () {
-                                      setState(() {
-                                        currentIndex++;
-                                      });
-                                      _pageController.animateToPage(
-                                        currentIndex,
-                                        duration: Duration(milliseconds: 300),
-                                        curve: Curves.easeInOut,
-                                      );
+                                      if (currentIndex == pageCount - 1) {
+                                        // Handle the Save action when on the last page
+                                        // For example, call a save method here
+                                        // Replace this with your actual save logic
+                                      } else {
+                                        goToPage(index + 1);
+                                        _pageController.animateToPage(
+                                          currentIndex,
+                                          duration:
+                                              const Duration(milliseconds: 300),
+                                          curve: Curves.easeInOut,
+                                        );
+                                      }
                                     },
                                     style: ElevatedButton.styleFrom(
                                       fixedSize: const Size(80, 27),
@@ -569,7 +572,9 @@ class _Bundle extends State<Bundle> {
                                       ),
                                     ),
                                     child: Text(
-                                      'Next',
+                                      index == pageCount - 1
+                                          ? 'Save'
+                                          : 'Next', // Conditionally change the button text
                                       style: GoogleFonts.plusJakartaSans(
                                         color: Colors.white,
                                         fontWeight: FontWeight.w700,
