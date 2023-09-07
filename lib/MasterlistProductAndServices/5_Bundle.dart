@@ -10,7 +10,7 @@ class Bundle extends StatefulWidget {
 }
 
 class _Bundle extends State<Bundle> {
-  final bool isChecked = false;
+  bool isChecked = false;
   final int pageCount = 2; // Total number of pages
   int currentIndex = 0;
   final PageController _pageController = PageController();
@@ -203,30 +203,32 @@ class _Bundle extends State<Bundle> {
                     ),
                     Row(
                       children: [
-                        // GestureDetector(
-                        //   onTap: () {
-                        //     // setState(() {
-                        //     //   isChecked = !isChecked;
-                        //     // });
-                        //   },
-                        //   child: Container(
-                        //     width: 15.0,
-                        //     height: 15.0,
-                        //     decoration: BoxDecoration(
-                        //       borderRadius: BorderRadius.circular(5.0),
-                        //       color: isChecked
-                        //           ? Colors.blue
-                        //           : const Color(0xFFD9D9D9),
-                        //     ),
-                        //     child: isChecked
-                        //         ? const Icon(
-                        //             Icons.check,
-                        //             color: Colors.white,
-                        //             size: 10,
-                        //           )
-                        //         : null,
-                        //   ),
-                        // ),
+                        GestureDetector(
+                          onTap: () {
+                            // setState(() {
+                            //   isChecked = !isChecked;
+                            // });
+                          },
+                          child: Container(
+                            width: 15.0,
+                            height: 15.0,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(5.0),
+                              color:
+                                  // isChecked
+                                  //     ? Colors.blue
+                                  //     :
+                                  const Color(0xFFD9D9D9),
+                            ),
+                            //   child: isChecked
+                            //       ? const Icon(
+                            //           Icons.check,
+                            //           color: Colors.white,
+                            //           size: 10,
+                            //         )
+                            //       : null,
+                          ),
+                        ),
                         const SizedBox(
                           width: 10,
                         ),
@@ -371,30 +373,32 @@ class _Bundle extends State<Bundle> {
                     ),
                     Row(
                       children: [
-                        // GestureDetector(
-                        //   onTap: () {
-                        //     setState(() {
-                        //       isChecked = !isChecked;
-                        //     });
-                        //   },
-                        //   child: Container(
-                        //     width: 15.0,
-                        //     height: 15.0,
-                        //     decoration: BoxDecoration(
-                        //       borderRadius: BorderRadius.circular(5.0),
-                        //       color: isChecked
-                        //           ? Colors.blue
-                        //           : const Color(0xFFD9D9D9),
-                        //     ),
-                        //     child: isChecked
-                        //         ? const Icon(
-                        //             Icons.check,
-                        //             color: Colors.white,
-                        //             size: 10,
-                        //           )
-                        //         : null,
-                        //   ),
-                        // ),
+                        GestureDetector(
+                          onTap: () {
+                            // setState(() {
+                            //   isChecked = !isChecked;
+                            // });
+                          },
+                          child: Container(
+                            width: 15.0,
+                            height: 15.0,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(5.0),
+                              color:
+                                  // isChecked
+                                  //     ? Colors.blue
+                                  //     :
+                                  const Color(0xFFD9D9D9),
+                            ),
+                            //   child: isChecked
+                            //       ? const Icon(
+                            //           Icons.check,
+                            //           color: Colors.white,
+                            //           size: 10,
+                            //         )
+                            //       : null,
+                          ),
+                        ),
                         const SizedBox(
                           width: 10,
                         ),
@@ -418,12 +422,316 @@ class _Bundle extends State<Bundle> {
 
     // *********************************************************************************************
 
-    SingleChildScrollView(
-      child: Column(
-        children: [
-          Text('Page 2'),
-        ],
-      ),
+    Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        const SizedBox(
+          height: 20,
+        ),
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Center(
+              child: Text(
+                'Bundle',
+                style: GoogleFonts.plusJakartaSans(
+                    color: Colors.black,
+                    fontSize: 14.0,
+                    fontWeight: FontWeight.w600),
+              ),
+            ),
+          ],
+        ),
+        const SizedBox(
+          height: 40,
+        ),
+        SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          child: Card(
+            elevation: 0.0,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(5.0),
+            ),
+            child: DataTable(
+              columnSpacing: 0.0,
+              dataRowHeight: 50.0,
+              border: const TableBorder(
+                horizontalInside: BorderSide(
+                    width: 0.7, color: Colors.grey), // Inner horizontal border
+                verticalInside: BorderSide(
+                    width: 0.7, color: Colors.grey), // Inner vertical border
+              ),
+              columns: [
+                DataColumn(
+                  label: SizedBox(
+                    width: 20.0,
+                    child: Text(
+                      '#',
+                      style: GoogleFonts.plusJakartaSans(
+                          color: Colors.black,
+                          fontSize: 8.0,
+                          fontWeight: FontWeight.w400),
+                    ),
+                  ),
+                ),
+                DataColumn(
+                  label: SizedBox(
+                    width: 80.0,
+                    child: Center(
+                      child: Text(
+                        'Product/Service',
+                        style: GoogleFonts.plusJakartaSans(
+                            color: Colors.black,
+                            fontSize: 8.0,
+                            fontWeight: FontWeight.w400),
+                      ),
+                    ),
+                  ),
+                ),
+                DataColumn(
+                  label: SizedBox(
+                    width: 80.0,
+                    child: Center(
+                      child: Text(
+                        'Description',
+                        style: GoogleFonts.plusJakartaSans(
+                            color: Colors.black,
+                            fontSize: 8.0,
+                            fontWeight: FontWeight.w400),
+                      ),
+                    ),
+                  ),
+                ),
+                DataColumn(
+                  label: SizedBox(
+                    width: 80.0,
+                    child: Center(
+                      child: Text(
+                        'Quantity',
+                        style: GoogleFonts.plusJakartaSans(
+                            color: Colors.black,
+                            fontSize: 8.0,
+                            fontWeight: FontWeight.w400),
+                      ),
+                    ),
+                  ),
+                ),
+                DataColumn(
+                  label: SizedBox(
+                    width: 80.0,
+                    child: Center(
+                      child: Text(
+                        'Rate',
+                        style: GoogleFonts.plusJakartaSans(
+                            color: Colors.black,
+                            fontSize: 8.0,
+                            fontWeight: FontWeight.w400),
+                      ),
+                    ),
+                  ),
+                ),
+                DataColumn(
+                  label: SizedBox(
+                    width: 80.0,
+                    child: Center(
+                      child: Text(
+                        'Amount',
+                        style: GoogleFonts.plusJakartaSans(
+                            color: Colors.black,
+                            fontSize: 8.0,
+                            fontWeight: FontWeight.w400),
+                      ),
+                    ),
+                  ),
+                ),
+                DataColumn(
+                  label: SizedBox(
+                    width: 80.0,
+                    child: Center(
+                      child: Text(
+                        '',
+                        style: GoogleFonts.plusJakartaSans(
+                            color: Colors.black,
+                            fontSize: 8.0,
+                            fontWeight: FontWeight.w400),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+              rows: [
+                DataRow(
+                  cells: [
+                    DataCell(
+                      Text(
+                        '1',
+                        style: GoogleFonts.plusJakartaSans(
+                            color: Colors.black,
+                            fontSize: 8.0,
+                            fontWeight: FontWeight.w400),
+                      ),
+                    ),
+                    DataCell(
+                      Text(
+                        '',
+                        style: GoogleFonts.plusJakartaSans(
+                            color: Colors.black,
+                            fontSize: 8.0,
+                            fontWeight: FontWeight.w400),
+                      ),
+                    ),
+                    DataCell(
+                      Text(
+                        '',
+                        style: GoogleFonts.plusJakartaSans(
+                            color: Colors.black,
+                            fontSize: 8.0,
+                            fontWeight: FontWeight.w400),
+                      ),
+                    ),
+                    DataCell(
+                      Text(
+                        '',
+                        style: GoogleFonts.plusJakartaSans(
+                            color: Colors.black,
+                            fontSize: 8.0,
+                            fontWeight: FontWeight.w400),
+                      ),
+                    ),
+                    DataCell(
+                      Text(
+                        '',
+                        style: GoogleFonts.plusJakartaSans(
+                            color: Colors.black,
+                            fontSize: 8.0,
+                            fontWeight: FontWeight.w400),
+                      ),
+                    ),
+                    DataCell(
+                      Text(
+                        '',
+                        style: GoogleFonts.plusJakartaSans(
+                            color: Colors.black,
+                            fontSize: 8.0,
+                            fontWeight: FontWeight.w400),
+                      ),
+                    ),
+                    DataCell(
+                      Text(
+                        '',
+                        style: GoogleFonts.plusJakartaSans(
+                            color: Colors.black,
+                            fontSize: 8.0,
+                            fontWeight: FontWeight.w400),
+                      ),
+                    ),
+                  ],
+                ),
+                DataRow(
+                  cells: [
+                    DataCell(
+                      Text(
+                        '2',
+                        style: GoogleFonts.plusJakartaSans(
+                            color: Colors.black,
+                            fontSize: 8.0,
+                            fontWeight: FontWeight.w400),
+                      ),
+                    ),
+                    DataCell(
+                      Text(
+                        '',
+                        style: GoogleFonts.plusJakartaSans(
+                            color: Colors.black,
+                            fontSize: 8.0,
+                            fontWeight: FontWeight.w400),
+                      ),
+                    ),
+                    DataCell(
+                      Text(
+                        '',
+                        style: GoogleFonts.plusJakartaSans(
+                            color: Colors.black,
+                            fontSize: 8.0,
+                            fontWeight: FontWeight.w400),
+                      ),
+                    ),
+                    DataCell(
+                      Text(
+                        '',
+                        style: GoogleFonts.plusJakartaSans(
+                            color: Colors.black,
+                            fontSize: 8.0,
+                            fontWeight: FontWeight.w400),
+                      ),
+                    ),
+                    DataCell(
+                      Text(
+                        '',
+                        style: GoogleFonts.plusJakartaSans(
+                            color: Colors.black,
+                            fontSize: 8.0,
+                            fontWeight: FontWeight.w400),
+                      ),
+                    ),
+                    DataCell(
+                      Text(
+                        '',
+                        style: GoogleFonts.plusJakartaSans(
+                            color: Colors.black,
+                            fontSize: 8.0,
+                            fontWeight: FontWeight.w400),
+                      ),
+                    ),
+                    DataCell(
+                      Text(
+                        '',
+                        style: GoogleFonts.plusJakartaSans(
+                            color: Colors.black,
+                            fontSize: 8.0,
+                            fontWeight: FontWeight.w400),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+        ),
+        const SizedBox(
+          height: 10.0,
+        ),
+        Row(
+          children: [
+            const SizedBox(
+              width: 20.0,
+            ),
+            GestureDetector(
+              onTap: () {},
+              child: Text(
+                'Add lines',
+                style: GoogleFonts.plusJakartaSans(
+                    color: const Color(0xFF0094FF),
+                    fontSize: 10.0,
+                    fontWeight: FontWeight.w600),
+              ),
+            ),
+            const SizedBox(
+              width: 20.0,
+            ),
+            GestureDetector(
+              onTap: () {},
+              child: Text(
+                'Clear all lines',
+                style: GoogleFonts.plusJakartaSans(
+                    color: const Color(0xFF0094FF),
+                    fontSize: 10.0,
+                    fontWeight: FontWeight.w600),
+              ),
+            ),
+          ],
+        ),
+      ],
     ),
   ];
 
