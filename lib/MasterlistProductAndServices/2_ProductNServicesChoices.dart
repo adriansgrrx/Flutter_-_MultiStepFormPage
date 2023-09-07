@@ -4,6 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:smart_ledger_ai/MasterlistProductAndServices/1_ProductNServicesDashboard.dart';
 import 'package:smart_ledger_ai/MasterlistProductAndServices/3_NonInventory.dart';
 import 'package:smart_ledger_ai/MasterlistProductAndServices/4_Service.dart';
+import 'package:smart_ledger_ai/MasterlistProductAndServices/5_Bundle.dart';
 
 class ProductNServicesChoices extends StatefulWidget {
   const ProductNServicesChoices({super.key});
@@ -206,14 +207,14 @@ class _ProductNServicesChoices extends State<ProductNServicesChoices> {
                     ),
                     child: GestureDetector(
                       onTap: () {
-                        // Navigator.push(
-                        //   context,
-                        //   MaterialPageRoute(
-                        //     builder: (context) {
-                        //       return YourDestinationPage();
-                        //     },
-                        //   ),
-                        // );
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) {
+                              return const Bundle();
+                            },
+                          ),
+                        );
                       },
                       child: Center(
                         child: Padding(
