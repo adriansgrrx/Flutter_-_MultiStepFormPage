@@ -265,14 +265,82 @@ class _ProductNServicesChoices extends State<ProductNServicesChoices> {
                     ),
                     child: GestureDetector(
                       onTap: () {
-                        // Navigator.push(
-                        //   context,
-                        //   MaterialPageRoute(
-                        //     builder: (context) {
-                        //       return YourDestinationPage();
-                        //     },
-                        //   ),
-                        // );
+                        showDialog(
+                          context: context,
+                          builder: (BuildContext context) {
+                            return Dialog(
+                              backgroundColor: Color(0xFFFFFBF2),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(5.0),
+                              ),
+                              child: Container(
+                                padding: EdgeInsets.all(20.0),
+                                child: Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      Text(
+                                        'Turn on Inventory Tracking',
+                                        textAlign: TextAlign.center,
+                                        style: GoogleFonts.plusJakartaSans(
+                                            color: Colors.black,
+                                            fontSize: 14.0,
+                                            fontWeight: FontWeight.w700),
+                                      ),
+                                      const SizedBox(height: 10.0),
+                                      Text(
+                                        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+                                        style: GoogleFonts.plusJakartaSans(
+                                            color: Colors.black,
+                                            fontSize: 14.0,
+                                            fontWeight: FontWeight.w400),
+                                      ),
+                                      const SizedBox(height: 20.0),
+                                      Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.end,
+                                        children: [
+                                          GestureDetector(
+                                            onTap: () {
+                                              Navigator.of(context).pop(); //
+                                            },
+                                            child: Text(
+                                              'CANCEL',
+                                              style:
+                                                  GoogleFonts.plusJakartaSans(
+                                                      color: Colors.black,
+                                                      fontSize: 12.0,
+                                                      fontWeight:
+                                                          FontWeight.w700),
+                                            ),
+                                          ),
+                                          const SizedBox(width: 20.0),
+                                          GestureDetector(
+                                            onTap: () {},
+                                            child: Text(
+                                              'TURN ON',
+                                              style:
+                                                  GoogleFonts.plusJakartaSans(
+                                                      color: const Color(
+                                                          0xFFED2F2F),
+                                                      fontSize: 12.0,
+                                                      fontWeight:
+                                                          FontWeight.w700),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            );
+                          },
+                        );
                       },
                       child: Center(
                         child: Padding(
