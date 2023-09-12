@@ -12,45 +12,65 @@ class SupplierInfoDashboard extends StatefulWidget {
 }
 
 class _SupplierInfoDashboard extends State<SupplierInfoDashboard> {
-  ValueNotifier<bool> isDialOpen = ValueNotifier(false);
+  bool showAdditionalButton = false;
+  String fabLabel = 'Add Item';
 
   @override
   Widget build(BuildContext context) {
-    return WillPopScope(
-      onWillPop: () async {
-        if (isDialOpen.value) {
-          isDialOpen.value = false;
-          return false;
-        } else {
-          return true;
-        }
-      },
-      child: Scaffold(
-        floatingActionButton: SpeedDial(
-          icon: Icons.add,
-          openCloseDial: isDialOpen,
-          backgroundColor: const Color(0xFF2C3A76),
-          overlayColor: const Color.fromARGB(255, 71, 71, 71),
-          spacing: 5,
-          spaceBetweenChildren: 5,
-          closeManually: false,
+    return MaterialApp(
+      home: Scaffold(
+        floatingActionButton: Stack(
           children: [
-            SpeedDialChild(
-              child: const Icon(Icons.people),
-              label: 'Import Supplier',
-              labelStyle: GoogleFonts.plusJakartaSans(
-                  color: Colors.black,
-                  fontSize: 10.0,
-                  fontWeight: FontWeight.w600),
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const SupplierInfo()),
-                );
-              },
+            Positioned(
+              bottom: 0,
+              right: 0,
+              child: Row(
+                children: [
+                  Text('data'),
+                  FloatingActionButton(
+                    onPressed: () {
+                      if (showAdditionalButton) {
+                        // Hide the additional FAB when the main FAB is clicked
+                        setState(() {
+                          showAdditionalButton = false;
+                        });
+                      } else {
+                        // Show the additional FAB and change its label
+                        setState(() {
+                          showAdditionalButton = true;
+                        });
+                      }
+                    },
+                    child: showAdditionalButton
+                        ? Icon(Icons.close)
+                        : Icon(Icons.add),
+                    backgroundColor: Colors.blue,
+                    tooltip: fabLabel,
+                  ),
+                ],
+              ),
             ),
+            if (showAdditionalButton)
+              Positioned(
+                top: 560,
+                right: 0,
+                child: Row(
+                  children: [
+                    Text('data'),
+                    FloatingActionButton(
+                      onPressed: () {
+                        // Handle the additional FAB's onPressed action here
+                      },
+                      child: Icon(Icons.people),
+                      backgroundColor: Colors.red,
+                      tooltip: 'Additional FAB',
+                    ),
+                  ],
+                ),
+              ),
           ],
         ),
+        backgroundColor: const Color(0xFFFFFBF2),
         appBar: AppBar(
           iconTheme: const IconThemeData(color: Colors.black),
           actions: <Widget>[

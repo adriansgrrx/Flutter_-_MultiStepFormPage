@@ -71,7 +71,7 @@ class _SupplierInfo extends State<SupplierInfo> {
                       child: Row(
                         children: [
                           Text(
-                            'SKU',
+                            'Contact Person',
                             style: GoogleFonts.plusJakartaSans(
                               color: const Color(0xFF010A10),
                               fontSize: 10.0,
@@ -110,161 +110,7 @@ class _SupplierInfo extends State<SupplierInfo> {
                       child: Row(
                         children: [
                           Text(
-                            'Category',
-                            style: GoogleFonts.plusJakartaSans(
-                              color: const Color(0xFF010A10),
-                              fontSize: 10.0,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 10.0),
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        border: Border.all(color: const Color(0x1a010a10)),
-                        borderRadius: BorderRadius.circular(10.0),
-                      ),
-                      child: DropdownButton<String>(
-                        isExpanded: true,
-                        hint: Text(
-                          'Choose a category',
-                          style: GoogleFonts.plusJakartaSans(
-                            color: Color.fromARGB(77, 1, 10, 16),
-                            fontSize: 10.0,
-                          ),
-                        ),
-                        underline: Container(),
-                        icon: const Icon(Icons.arrow_drop_down,
-                            color: Color(0x1a010a10)),
-                        items: <String>[
-                          'Option 1',
-                          'Option 2',
-                          'Option 3',
-                          'Option 4',
-                        ].map((String value) {
-                          return DropdownMenuItem<String>(
-                            value: value,
-                            child: Row(
-                              children: [
-                                const SizedBox(width: 10),
-                                Text(value),
-                              ],
-                            ),
-                          );
-                        }).toList(),
-                        onChanged: (String? newValue) {
-                          // Handle selection
-                        },
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    Row(
-                      children: [
-                        GestureDetector(
-                          onTap: () {
-                            // setState(() {
-                            //   isChecked = !isChecked;
-                            // });
-                          },
-                          child: Container(
-                            width: 15.0,
-                            height: 15.0,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(5.0),
-                              color:
-                                  // isChecked
-                                  //     ? Colors.blue
-                                  //     :
-                                  const Color(0xFFD9D9D9),
-                            ),
-                            //   child: isChecked
-                            //       ? const Icon(
-                            //           Icons.check,
-                            //           color: Colors.white,
-                            //           size: 10,
-                            //         )
-                            //       : null,
-                          ),
-                        ),
-                        const SizedBox(
-                          width: 10,
-                        ),
-                        Text(
-                          'I sell this product/service to my customers.',
-                          style: GoogleFonts.plusJakartaSans(
-                            color: const Color(0xFF010A10),
-                            fontSize: 10.0,
-                          ),
-                        ),
-                      ],
-                    ),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                  ],
-                ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(bottom: 10.0),
-                      child: Row(
-                        children: [
-                          Text(
-                            'Description',
-                            style: GoogleFonts.plusJakartaSans(
-                              color: const Color(0xFF010A10),
-                              fontSize: 10.0,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Container(
-                      height: 70,
-                      padding: const EdgeInsets.symmetric(horizontal: 10.0),
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        border: Border.all(color: const Color(0x1a010a10)),
-                        borderRadius: BorderRadius.circular(10.0),
-                      ),
-                      child: TextField(
-                        decoration: InputDecoration(
-                          border: InputBorder.none,
-                          contentPadding:
-                              const EdgeInsets.symmetric(horizontal: 10),
-                          hintText: 'Description on sales form',
-                          hintStyle: GoogleFonts.plusJakartaSans(
-                            textStyle: const TextStyle(
-                                color: Colors.grey,
-                                fontSize:
-                                    10.0, // Adjust the font size as needed
-                                fontWeight: FontWeight.w300),
-                          ),
-                        ),
-                        onChanged: (String value) {
-                          // Handle input changes
-                        },
-                      ),
-                    ),
-                  ],
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(bottom: 10.0),
-                      child: Row(
-                        children: [
-                          Text(
-                            'Sales/Price rate',
+                            'Telephone',
                             style: GoogleFonts.plusJakartaSans(
                               color: const Color(0xFF010A10),
                               fontSize: 10.0,
@@ -303,7 +149,7 @@ class _SupplierInfo extends State<SupplierInfo> {
                       child: Row(
                         children: [
                           Text(
-                            'Income Account',
+                            'Business Name Style',
                             style: GoogleFonts.plusJakartaSans(
                               color: const Color(0xFF010A10),
                               fontSize: 10.0,
@@ -329,50 +175,49 @@ class _SupplierInfo extends State<SupplierInfo> {
                         },
                       ),
                     ),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    Row(
-                      children: [
-                        GestureDetector(
-                          onTap: () {
-                            // setState(() {
-                            //   isChecked = !isChecked;
-                            // });
-                          },
-                          child: Container(
-                            width: 15.0,
-                            height: 15.0,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(5.0),
-                              color:
-                                  // isChecked
-                                  //     ? Colors.blue
-                                  //     :
-                                  const Color(0xFFD9D9D9),
+                  ],
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 10.0),
+                      child: Row(
+                        children: [
+                          Text(
+                            'Mobile Number',
+                            style: GoogleFonts.plusJakartaSans(
+                              color: const Color(0xFF010A10),
+                              fontSize: 10.0,
                             ),
-                            //   child: isChecked
-                            //       ? const Icon(
-                            //           Icons.check,
-                            //           color: Colors.white,
-                            //           size: 10,
-                            //         )
-                            //       : null,
                           ),
+                        ],
+                      ),
+                    ),
+                    Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        border: Border.all(color: const Color(0x1a010a10)),
+                        borderRadius: BorderRadius.circular(10.0),
+                      ),
+                      child: TextField(
+                        decoration: const InputDecoration(
+                          border: InputBorder.none,
+                          contentPadding: EdgeInsets.symmetric(horizontal: 10),
                         ),
-                        const SizedBox(
-                          width: 10,
-                        ),
-                        Text(
-                          'I purchase this product/service from a supplier.',
-                          style: GoogleFonts.plusJakartaSans(
-                            color: const Color(0xFF010A10),
-                            fontSize: 10.0,
-                          ),
-                        ),
-                      ],
+                        onChanged: (String value) {
+                          // Handle input changes
+                        },
+                      ),
                     ),
                   ],
+                ),
+                const SizedBox(
+                  height: 10,
                 ),
               ],
             ),
@@ -386,311 +231,208 @@ class _SupplierInfo extends State<SupplierInfo> {
     Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const SizedBox(
-          height: 20,
-        ),
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Center(
-              child: Text(
-                'Bundle',
-                style: GoogleFonts.plusJakartaSans(
-                    color: Colors.black,
-                    fontSize: 14.0,
-                    fontWeight: FontWeight.w600),
-              ),
-            ),
-          ],
-        ),
-        const SizedBox(
-          height: 40,
-        ),
-        SingleChildScrollView(
-          scrollDirection: Axis.horizontal,
-          child: Card(
-            elevation: 0.0,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(5.0),
-            ),
-            child: DataTable(
-              columnSpacing: 0.0,
-              dataRowHeight: 50.0,
-              border: const TableBorder(
-                horizontalInside: BorderSide(
-                    width: 0.7, color: Colors.grey), // Inner horizontal border
-                verticalInside: BorderSide(
-                    width: 0.7, color: Colors.grey), // Inner vertical border
-              ),
-              columns: [
-                DataColumn(
-                  label: SizedBox(
-                    width: 20.0,
-                    child: Text(
-                      '#',
-                      style: GoogleFonts.plusJakartaSans(
-                          color: Colors.black,
-                          fontSize: 8.0,
-                          fontWeight: FontWeight.w400),
-                    ),
-                  ),
-                ),
-                DataColumn(
-                  label: SizedBox(
-                    width: 80.0,
-                    child: Center(
-                      child: Text(
-                        'Product/Service',
-                        style: GoogleFonts.plusJakartaSans(
-                            color: Colors.black,
-                            fontSize: 8.0,
-                            fontWeight: FontWeight.w400),
+        Expanded(
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(top: 20.0, bottom: 10.0),
+                      child: Row(
+                        children: [
+                          Text(
+                            'Shipping Address',
+                            style: GoogleFonts.plusJakartaSans(
+                              color: const Color(0xFF010A10),
+                              fontSize: 10.0,
+                            ),
+                          ),
+                        ],
                       ),
                     ),
-                  ),
-                ),
-                DataColumn(
-                  label: SizedBox(
-                    width: 80.0,
-                    child: Center(
-                      child: Text(
-                        'Description',
-                        style: GoogleFonts.plusJakartaSans(
-                            color: Colors.black,
-                            fontSize: 8.0,
-                            fontWeight: FontWeight.w400),
+                    Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        border: Border.all(color: const Color(0x1a010a10)),
+                        borderRadius: BorderRadius.circular(10.0),
                       ),
-                    ),
-                  ),
-                ),
-                DataColumn(
-                  label: SizedBox(
-                    width: 80.0,
-                    child: Center(
-                      child: Text(
-                        'Quantity',
-                        style: GoogleFonts.plusJakartaSans(
-                            color: Colors.black,
-                            fontSize: 8.0,
-                            fontWeight: FontWeight.w400),
-                      ),
-                    ),
-                  ),
-                ),
-                DataColumn(
-                  label: SizedBox(
-                    width: 80.0,
-                    child: Center(
-                      child: Text(
-                        'Rate',
-                        style: GoogleFonts.plusJakartaSans(
-                            color: Colors.black,
-                            fontSize: 8.0,
-                            fontWeight: FontWeight.w400),
-                      ),
-                    ),
-                  ),
-                ),
-                DataColumn(
-                  label: SizedBox(
-                    width: 80.0,
-                    child: Center(
-                      child: Text(
-                        'Amount',
-                        style: GoogleFonts.plusJakartaSans(
-                            color: Colors.black,
-                            fontSize: 8.0,
-                            fontWeight: FontWeight.w400),
-                      ),
-                    ),
-                  ),
-                ),
-                DataColumn(
-                  label: SizedBox(
-                    width: 80.0,
-                    child: Center(
-                      child: Text(
-                        '',
-                        style: GoogleFonts.plusJakartaSans(
-                            color: Colors.black,
-                            fontSize: 8.0,
-                            fontWeight: FontWeight.w400),
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-              rows: [
-                DataRow(
-                  cells: [
-                    DataCell(
-                      Text(
-                        '1',
-                        style: GoogleFonts.plusJakartaSans(
-                            color: Colors.black,
-                            fontSize: 8.0,
-                            fontWeight: FontWeight.w400),
-                      ),
-                    ),
-                    DataCell(
-                      Text(
-                        '',
-                        style: GoogleFonts.plusJakartaSans(
-                            color: Colors.black,
-                            fontSize: 8.0,
-                            fontWeight: FontWeight.w400),
-                      ),
-                    ),
-                    DataCell(
-                      Text(
-                        '',
-                        style: GoogleFonts.plusJakartaSans(
-                            color: Colors.black,
-                            fontSize: 8.0,
-                            fontWeight: FontWeight.w400),
-                      ),
-                    ),
-                    DataCell(
-                      Text(
-                        '',
-                        style: GoogleFonts.plusJakartaSans(
-                            color: Colors.black,
-                            fontSize: 8.0,
-                            fontWeight: FontWeight.w400),
-                      ),
-                    ),
-                    DataCell(
-                      Text(
-                        '',
-                        style: GoogleFonts.plusJakartaSans(
-                            color: Colors.black,
-                            fontSize: 8.0,
-                            fontWeight: FontWeight.w400),
-                      ),
-                    ),
-                    DataCell(
-                      Text(
-                        '',
-                        style: GoogleFonts.plusJakartaSans(
-                            color: Colors.black,
-                            fontSize: 8.0,
-                            fontWeight: FontWeight.w400),
-                      ),
-                    ),
-                    DataCell(
-                      Text(
-                        '',
-                        style: GoogleFonts.plusJakartaSans(
-                            color: Colors.black,
-                            fontSize: 8.0,
-                            fontWeight: FontWeight.w400),
+                      child: TextField(
+                        decoration: const InputDecoration(
+                          border: InputBorder.none,
+                          contentPadding: EdgeInsets.symmetric(horizontal: 10),
+                        ),
+                        onChanged: (String value) {
+                          // Handle input changes
+                        },
                       ),
                     ),
                   ],
                 ),
-                DataRow(
-                  cells: [
-                    DataCell(
-                      Text(
-                        '2',
-                        style: GoogleFonts.plusJakartaSans(
-                            color: Colors.black,
-                            fontSize: 8.0,
-                            fontWeight: FontWeight.w400),
+                const SizedBox(
+                  height: 10,
+                ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 10.0),
+                      child: Row(
+                        children: [
+                          Text(
+                            'Position',
+                            style: GoogleFonts.plusJakartaSans(
+                              color: const Color(0xFF010A10),
+                              fontSize: 10.0,
+                            ),
+                          ),
+                        ],
                       ),
                     ),
-                    DataCell(
-                      Text(
-                        '',
-                        style: GoogleFonts.plusJakartaSans(
-                            color: Colors.black,
-                            fontSize: 8.0,
-                            fontWeight: FontWeight.w400),
+                    Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        border: Border.all(color: const Color(0x1a010a10)),
+                        borderRadius: BorderRadius.circular(10.0),
                       ),
-                    ),
-                    DataCell(
-                      Text(
-                        '',
-                        style: GoogleFonts.plusJakartaSans(
-                            color: Colors.black,
-                            fontSize: 8.0,
-                            fontWeight: FontWeight.w400),
-                      ),
-                    ),
-                    DataCell(
-                      Text(
-                        '',
-                        style: GoogleFonts.plusJakartaSans(
-                            color: Colors.black,
-                            fontSize: 8.0,
-                            fontWeight: FontWeight.w400),
-                      ),
-                    ),
-                    DataCell(
-                      Text(
-                        '',
-                        style: GoogleFonts.plusJakartaSans(
-                            color: Colors.black,
-                            fontSize: 8.0,
-                            fontWeight: FontWeight.w400),
-                      ),
-                    ),
-                    DataCell(
-                      Text(
-                        '',
-                        style: GoogleFonts.plusJakartaSans(
-                            color: Colors.black,
-                            fontSize: 8.0,
-                            fontWeight: FontWeight.w400),
-                      ),
-                    ),
-                    DataCell(
-                      Text(
-                        '',
-                        style: GoogleFonts.plusJakartaSans(
-                            color: Colors.black,
-                            fontSize: 8.0,
-                            fontWeight: FontWeight.w400),
+                      child: TextField(
+                        decoration: const InputDecoration(
+                          border: InputBorder.none,
+                          contentPadding: EdgeInsets.symmetric(horizontal: 10),
+                        ),
+                        onChanged: (String value) {
+                          // Handle input changes
+                        },
                       ),
                     ),
                   ],
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 10.0),
+                      child: Row(
+                        children: [
+                          Text(
+                            'Billing Address',
+                            style: GoogleFonts.plusJakartaSans(
+                              color: const Color(0xFF010A10),
+                              fontSize: 10.0,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        border: Border.all(color: const Color(0x1a010a10)),
+                        borderRadius: BorderRadius.circular(10.0),
+                      ),
+                      child: TextField(
+                        decoration: const InputDecoration(
+                          border: InputBorder.none,
+                          contentPadding: EdgeInsets.symmetric(horizontal: 10),
+                        ),
+                        onChanged: (String value) {
+                          // Handle input changes
+                        },
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 10.0),
+                      child: Row(
+                        children: [
+                          Text(
+                            'Website',
+                            style: GoogleFonts.plusJakartaSans(
+                              color: const Color(0xFF010A10),
+                              fontSize: 10.0,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        border: Border.all(color: const Color(0x1a010a10)),
+                        borderRadius: BorderRadius.circular(10.0),
+                      ),
+                      child: TextField(
+                        decoration: const InputDecoration(
+                          border: InputBorder.none,
+                          contentPadding: EdgeInsets.symmetric(horizontal: 10),
+                        ),
+                        onChanged: (String value) {
+                          // Handle input changes
+                        },
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 10.0),
+                      child: Row(
+                        children: [
+                          Text(
+                            'Address',
+                            style: GoogleFonts.plusJakartaSans(
+                              color: const Color(0xFF010A10),
+                              fontSize: 10.0,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        border: Border.all(color: const Color(0x1a010a10)),
+                        borderRadius: BorderRadius.circular(10.0),
+                      ),
+                      child: TextField(
+                        decoration: const InputDecoration(
+                          border: InputBorder.none,
+                          contentPadding: EdgeInsets.symmetric(horizontal: 10),
+                        ),
+                        onChanged: (String value) {
+                          // Handle input changes
+                        },
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(
+                  height: 10,
                 ),
               ],
             ),
           ),
-        ),
-        const SizedBox(
-          height: 10.0,
-        ),
-        Row(
-          children: [
-            const SizedBox(
-              width: 20.0,
-            ),
-            GestureDetector(
-              onTap: () {},
-              child: Text(
-                'Add lines',
-                style: GoogleFonts.plusJakartaSans(
-                    color: const Color(0xFF0094FF),
-                    fontSize: 10.0,
-                    fontWeight: FontWeight.w600),
-              ),
-            ),
-            const SizedBox(
-              width: 20.0,
-            ),
-            GestureDetector(
-              onTap: () {},
-              child: Text(
-                'Clear all lines',
-                style: GoogleFonts.plusJakartaSans(
-                    color: const Color(0xFF0094FF),
-                    fontSize: 10.0,
-                    fontWeight: FontWeight.w600),
-              ),
-            ),
-          ],
         ),
       ],
     ),
@@ -785,10 +527,13 @@ class _SupplierInfo extends State<SupplierInfo> {
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.end,
                               children: [
+                                const SizedBox(width: 10),
                                 if (index > 0)
                                   ElevatedButton(
                                     onPressed: () {
-                                      goToPage(index - 1);
+                                      setState(() {
+                                        currentIndex--;
+                                      });
                                       _pageController.animateToPage(
                                         currentIndex,
                                         duration: Duration(milliseconds: 300),
@@ -817,19 +562,14 @@ class _SupplierInfo extends State<SupplierInfo> {
                                 if (index < pageCount)
                                   ElevatedButton(
                                     onPressed: () {
-                                      if (currentIndex == pageCount - 1) {
-                                        // Handle the Save action when on the last page
-                                        // For example, call a save method here
-                                        // Replace this with your actual save logic
-                                      } else {
-                                        goToPage(index + 1);
-                                        _pageController.animateToPage(
-                                          currentIndex,
-                                          duration:
-                                              const Duration(milliseconds: 300),
-                                          curve: Curves.easeInOut,
-                                        );
-                                      }
+                                      setState(() {
+                                        currentIndex++;
+                                      });
+                                      _pageController.animateToPage(
+                                        currentIndex,
+                                        duration: Duration(milliseconds: 300),
+                                        curve: Curves.easeInOut,
+                                      );
                                     },
                                     style: ElevatedButton.styleFrom(
                                       fixedSize: const Size(80, 27),
@@ -841,9 +581,7 @@ class _SupplierInfo extends State<SupplierInfo> {
                                       ),
                                     ),
                                     child: Text(
-                                      index == pageCount - 1
-                                          ? 'Save'
-                                          : 'Next', // Conditionally change the button text
+                                      'Next',
                                       style: GoogleFonts.plusJakartaSans(
                                         color: Colors.white,
                                         fontWeight: FontWeight.w700,
