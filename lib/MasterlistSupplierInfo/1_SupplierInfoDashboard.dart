@@ -26,18 +26,34 @@ class _SupplierInfoDashboard extends State<SupplierInfoDashboard> {
               right: 0,
               child: Row(
                 children: [
-                  Text('data'),
+                  Visibility(
+                    visible:
+                        showAdditionalButton, // Only show the label if showAdditionalButton is true
+                    child: Text(
+                      'Main Button',
+                      style: TextStyle(fontSize: 16.0),
+                    ),
+                  ),
+                  SizedBox(width: 8.0),
                   FloatingActionButton(
                     onPressed: () {
+                      // Check if showAdditionalButton is true or false
                       if (showAdditionalButton) {
-                        // Hide the additional FAB when the main FAB is clicked
-                        setState(() {
-                          showAdditionalButton = false;
-                        });
+                        // If it's true, navigate to a new page
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) =>
+                                SupplierInfo(), // Replace SecondPage with your desired page
+                          ),
+                        );
                       } else {
-                        // Show the additional FAB and change its label
+                        // If it's false, toggle the visibility of the additional button and change the label
                         setState(() {
-                          showAdditionalButton = true;
+                          showAdditionalButton = !showAdditionalButton;
+                          fabLabel = showAdditionalButton
+                              ? 'Close'
+                              : 'Add Item'; // Change the label
                         });
                       }
                     },
