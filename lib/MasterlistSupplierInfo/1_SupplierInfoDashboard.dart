@@ -14,93 +14,12 @@ class SupplierInfoDashboard extends StatefulWidget {
 class _SupplierInfoDashboard extends State<SupplierInfoDashboard> {
   bool showAdditionalButton = false;
   String fabLabel = 'Add Item';
+  OverlayEntry? _overlayEntry;
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        floatingActionButton: Stack(
-          children: [
-            Positioned(
-              bottom: 0,
-              right: 0,
-              child: Row(
-                children: [
-                  Visibility(
-                    visible:
-                        showAdditionalButton, // Only show the label if showAdditionalButton is true
-                    child: Text(
-                      'Categories',
-                      style: GoogleFonts.plusJakartaSans(
-                          color: Colors.black,
-                          fontSize: 10.0,
-                          fontWeight: FontWeight.w600),
-                    ),
-                  ),
-                  SizedBox(width: 8.0),
-                  FloatingActionButton(
-                    onPressed: () {
-                      // Check if showAdditionalButton is true or false
-                      if (showAdditionalButton) {
-                        // If it's true, navigate to a new page
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) =>
-                                SupplierInfo(), // Replace SecondPage with your desired page
-                          ),
-                        );
-                      } else {
-                        // If it's false, toggle the visibility of the additional button and change the label
-                        setState(() {
-                          showAdditionalButton = !showAdditionalButton;
-                          fabLabel = showAdditionalButton
-                              ? 'Close'
-                              : 'Add Item'; // Change the label
-                        });
-                      }
-                    },
-                    child: showAdditionalButton
-                        ? Icon(Icons.people)
-                        : Icon(Icons.add),
-                    backgroundColor: const Color(0xFF2C3A76),
-                    tooltip: fabLabel,
-                  ),
-                ],
-              ),
-            ),
-            if (showAdditionalButton)
-              Positioned(
-                top: 560,
-                right: 0,
-                child: Row(
-                  children: [
-                    Text(
-                      'Categories',
-                      style: GoogleFonts.plusJakartaSans(
-                          color: Colors.black,
-                          fontSize: 10.0,
-                          fontWeight: FontWeight.w600),
-                    ),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    FloatingActionButton(
-                      onPressed: () {
-                        // Handle the additional FAB's onPressed action here
-                      },
-                      child: Icon(
-                        Icons.people,
-                        color: Colors.blue,
-                      ),
-                      backgroundColor: Colors.white,
-                      tooltip: 'Additional FAB',
-                    ),
-                  ],
-                ),
-              ),
-          ],
-        ),
         backgroundColor: const Color(0xFFFFFBF2),
         appBar: AppBar(
           iconTheme: const IconThemeData(color: Colors.black),
@@ -426,7 +345,123 @@ class _SupplierInfoDashboard extends State<SupplierInfoDashboard> {
           ),
         ),
         drawer: const NavigationDrawer(),
+        floatingActionButton: Stack(
+          children: [
+            Positioned(
+              bottom: 0,
+              right: 0,
+              child: Row(
+                children: [
+                  Visibility(
+                    visible: showAdditionalButton,
+                    child: Text(
+                      'Add supplier manually',
+                      style: GoogleFonts.plusJakartaSans(
+                        color: Colors.black,
+                        fontSize: 10.0,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                  ),
+                  SizedBox(width: 8.0),
+                  FloatingActionButton(
+                    onPressed: () {
+                      // Check if showAdditionalButton is true or false
+                      if (showAdditionalButton) {
+                        // If it's true, navigate to a new page
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => SupplierInfo(),
+                          ),
+                        );
+                      } else {
+                        // If it's false, toggle the visibility of the additional button and change the label
+                        setState(() {
+                          showAdditionalButton = !showAdditionalButton;
+                          fabLabel =
+                              showAdditionalButton ? 'Close' : 'Add Item';
+                          _toggleOverlay(); // Toggle overlay visibility
+                        });
+                      }
+                    },
+                    child: showAdditionalButton
+                        ? Icon(Icons.people)
+                        : Icon(Icons.add),
+                    backgroundColor: const Color(0xFF2C3A76),
+                    tooltip: fabLabel,
+                  ),
+                ],
+              ),
+            ),
+            if (showAdditionalButton)
+              Positioned(
+                top: 560,
+                right: 0,
+                child: Row(
+                  children: [
+                    Text(
+                      'Import Supplier',
+                      style: GoogleFonts.plusJakartaSans(
+                        color: Colors.black,
+                        fontSize: 10.0,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    FloatingActionButton(
+                      onPressed: () {
+                        // Handle the additional FAB's onPressed action here
+                      },
+                      child: Icon(
+                        Icons.people,
+                        color: Colors.blue,
+                      ),
+                      backgroundColor: Colors.white,
+                      tooltip: 'Additional FAB',
+                    ),
+                  ],
+                ),
+              ),
+          ],
+        ),
       ),
+    );
+  }
+
+  // Function to toggle overlay visibility
+  void _toggleOverlay() {
+    if (_overlayEntry != null) {
+      _overlayEntry!.remove();
+      _overlayEntry = null;
+    } else {
+      _overlayEntry = _createOverlayEntry();
+      Overlay.of(context)?.insert(_overlayEntry!);
+    }
+  }
+
+  // Function to create the overlay
+  OverlayEntry _createOverlayEntry() {
+    return OverlayEntry(
+      builder: (context) {
+        return Stack(
+          children: [
+            // Background overlay with low opacity
+            Container(
+              color: Colors.black.withOpacity(0.3),
+              child: GestureDetector(
+                onTap: () {
+                  // Close the overlay when tapping on the background
+                  _toggleOverlay();
+                },
+              ),
+            ),
+            // Your overlay content here
+          ],
+        );
+      },
     );
   }
 }
