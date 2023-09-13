@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
 
@@ -37,7 +36,8 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
             Positioned.fill(
               child: Container(
-                color: Colors.black.withOpacity(0.7), // Adjust the opacity and color as needed
+                color: Colors.black
+                    .withOpacity(0.7), // Adjust the opacity and color as needed
               ),
             ),
             // You can add additional widgets on top of the overlay here.

@@ -30,8 +30,11 @@ class _SupplierInfoDashboard extends State<SupplierInfoDashboard> {
                     visible:
                         showAdditionalButton, // Only show the label if showAdditionalButton is true
                     child: Text(
-                      'Main Button',
-                      style: TextStyle(fontSize: 16.0),
+                      'Categories',
+                      style: GoogleFonts.plusJakartaSans(
+                          color: Colors.black,
+                          fontSize: 10.0,
+                          fontWeight: FontWeight.w600),
                     ),
                   ),
                   SizedBox(width: 8.0),
@@ -58,9 +61,9 @@ class _SupplierInfoDashboard extends State<SupplierInfoDashboard> {
                       }
                     },
                     child: showAdditionalButton
-                        ? Icon(Icons.close)
+                        ? Icon(Icons.people)
                         : Icon(Icons.add),
-                    backgroundColor: Colors.blue,
+                    backgroundColor: const Color(0xFF2C3A76),
                     tooltip: fabLabel,
                   ),
                 ],
@@ -72,13 +75,25 @@ class _SupplierInfoDashboard extends State<SupplierInfoDashboard> {
                 right: 0,
                 child: Row(
                   children: [
-                    Text('data'),
+                    Text(
+                      'Categories',
+                      style: GoogleFonts.plusJakartaSans(
+                          color: Colors.black,
+                          fontSize: 10.0,
+                          fontWeight: FontWeight.w600),
+                    ),
+                    SizedBox(
+                      width: 10,
+                    ),
                     FloatingActionButton(
                       onPressed: () {
                         // Handle the additional FAB's onPressed action here
                       },
-                      child: Icon(Icons.people),
-                      backgroundColor: Colors.red,
+                      child: Icon(
+                        Icons.people,
+                        color: Colors.blue,
+                      ),
+                      backgroundColor: Colors.white,
                       tooltip: 'Additional FAB',
                     ),
                   ],
