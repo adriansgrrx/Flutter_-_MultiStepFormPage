@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 import 'package:smart_ledger_ai/MasterlistCustomerInfo/3_CustomerImportImage.dart';
 import 'package:smart_ledger_ai/MasterlistSupplierInfo/2_SupplierInfo.dart';
 
@@ -22,21 +21,6 @@ class _SupplierInfoDashboard extends State<SupplierInfoDashboard> {
       home: Scaffold(
         floatingActionButton: Stack(
           children: [
-            if (showAdditionalButton)
-              GestureDetector(
-                onTap: () {
-                  // Close the overlay when tapped outside
-                  // _overlayEntry?.remove();
-                  setState(() {
-                    showAdditionalButton = false;
-                    fabLabel = 'Add Item';
-                  });
-                },
-                child: Container(
-                  color:
-                      Colors.black.withOpacity(0.5), // Semi-transparent black
-                ),
-              ),
             Positioned(
               bottom: 0,
               right: 0,
@@ -53,18 +37,18 @@ class _SupplierInfoDashboard extends State<SupplierInfoDashboard> {
                       ),
                     ),
                   ),
-                  SizedBox(width: 8.0),
+                  const SizedBox(width: 8.0),
                   FloatingActionButton(
                     onPressed: () {
                       // Check if showAdditionalButton is true or false
                       if (showAdditionalButton) {
                         // If it's true, navigate to a new page
-                        // Navigator.push(
-                        //   context,
-                        //   MaterialPageRoute(
-                        //     builder: (context) => SupplierInfo(),
-                        //   ),
-                        // );
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const SupplierInfo(),
+                          ),
+                        );
                       } else {
                         // If it's false, toggle the visibility of the additional button and change the label
                         setState(() {
@@ -74,11 +58,11 @@ class _SupplierInfoDashboard extends State<SupplierInfoDashboard> {
                         });
                       }
                     },
-                    child: showAdditionalButton
-                        ? Icon(Icons.people)
-                        : Icon(Icons.add),
                     backgroundColor: const Color(0xFF2C3A76),
                     tooltip: fabLabel,
+                    child: showAdditionalButton
+                        ? const Icon(Icons.people)
+                        : const Icon(Icons.add),
                   ),
                 ],
               ),
@@ -97,19 +81,25 @@ class _SupplierInfoDashboard extends State<SupplierInfoDashboard> {
                         fontWeight: FontWeight.w600,
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 10,
                     ),
                     FloatingActionButton(
                       onPressed: () {
-                        // Handle the additional FAB's onPressed action here
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) =>
+                                const CustomerImportImagePage(),
+                          ),
+                        );
                       },
-                      child: Icon(
+                      backgroundColor: Colors.white,
+                      tooltip: 'Additional FAB',
+                      child: const Icon(
                         Icons.people,
                         color: Colors.blue,
                       ),
-                      backgroundColor: Colors.white,
-                      tooltip: 'Additional FAB',
                     ),
                   ],
                 ),
@@ -443,6 +433,22 @@ class _SupplierInfoDashboard extends State<SupplierInfoDashboard> {
                 ),
               ),
             ),
+            if (showAdditionalButton)
+              GestureDetector(
+                onTap: () {
+                  // Close the overlay when tapped
+                  setState(() {
+                    showAdditionalButton = false;
+                    fabLabel = 'Add Item';
+                  });
+                },
+                child: Container(
+                  color:
+                      Colors.black.withOpacity(0.5), // Change opacity as needed
+                  width: MediaQuery.of(context).size.width,
+                  height: MediaQuery.of(context).size.height,
+                ),
+              ),
           ],
         ),
         drawer: const NavigationDrawer(),
