@@ -14,7 +14,7 @@ class SupplierInfoDashboard extends StatefulWidget {
 class _SupplierInfoDashboard extends State<SupplierInfoDashboard> {
   bool showAdditionalButton = false;
   String fabLabel = 'Add Item';
-  OverlayEntry? _overlayEntry;
+  // OverlayEntry? _overlayEntry;
 
   @override
   Widget build(BuildContext context) {
@@ -22,6 +22,21 @@ class _SupplierInfoDashboard extends State<SupplierInfoDashboard> {
       home: Scaffold(
         floatingActionButton: Stack(
           children: [
+            if (showAdditionalButton)
+              GestureDetector(
+                onTap: () {
+                  // Close the overlay when tapped outside
+                  // _overlayEntry?.remove();
+                  setState(() {
+                    showAdditionalButton = false;
+                    fabLabel = 'Add Item';
+                  });
+                },
+                child: Container(
+                  color:
+                      Colors.black.withOpacity(0.5), // Semi-transparent black
+                ),
+              ),
             Positioned(
               bottom: 0,
               right: 0,
@@ -44,19 +59,18 @@ class _SupplierInfoDashboard extends State<SupplierInfoDashboard> {
                       // Check if showAdditionalButton is true or false
                       if (showAdditionalButton) {
                         // If it's true, navigate to a new page
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => SupplierInfo(),
-                          ),
-                        );
+                        // Navigator.push(
+                        //   context,
+                        //   MaterialPageRoute(
+                        //     builder: (context) => SupplierInfo(),
+                        //   ),
+                        // );
                       } else {
                         // If it's false, toggle the visibility of the additional button and change the label
                         setState(() {
                           showAdditionalButton = !showAdditionalButton;
                           fabLabel =
                               showAdditionalButton ? 'Close' : 'Add Item';
-                          _toggleOverlay(); // Toggle overlay visibility
                         });
                       }
                     },
@@ -257,113 +271,67 @@ class _SupplierInfoDashboard extends State<SupplierInfoDashboard> {
           backgroundColor: Colors.transparent,
           elevation: 0,
         ),
-        body: Padding(
-          padding: const EdgeInsets.all(10.0),
-          child: Card(
-            elevation: 4.0,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(10.0),
-            ),
-            child: Padding(
+        body: Stack(
+          children: [
+            Padding(
               padding: const EdgeInsets.all(10.0),
-              child: DataTable(
-                border: const TableBorder(
-                  horizontalInside: BorderSide(
-                      width: 0.7,
-                      color: Colors.grey), // Inner horizontal border
-                  verticalInside: BorderSide(
-                      width: 0.7, color: Colors.grey), // Inner vertical border
+              child: Card(
+                elevation: 4.0,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10.0),
                 ),
-                columnSpacing: 30.0,
-                columns: [
-                  DataColumn(
-                    label: Text(
-                      'Customer Name',
-                      style: GoogleFonts.plusJakartaSans(
-                          color: Colors.black,
-                          fontSize: 8.0,
-                          fontWeight: FontWeight.w400),
+                child: Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: DataTable(
+                    border: const TableBorder(
+                      horizontalInside: BorderSide(
+                          width: 0.7,
+                          color: Colors.grey), // Inner horizontal border
+                      verticalInside: BorderSide(
+                          width: 0.7,
+                          color: Colors.grey), // Inner vertical border
                     ),
-                  ),
-                  DataColumn(
-                    label: Text(
-                      'Address',
-                      style: GoogleFonts.plusJakartaSans(
-                          color: Colors.black,
-                          fontSize: 8.0,
-                          fontWeight: FontWeight.w400),
-                    ),
-                  ),
-                  DataColumn(
-                    label: Text(
-                      'Note',
-                      style: GoogleFonts.plusJakartaSans(
-                          color: Colors.black,
-                          fontSize: 8.0,
-                          fontWeight: FontWeight.w400),
-                    ),
-                  ),
-                  DataColumn(
-                    label: Text(
-                      'Balance',
-                      style: GoogleFonts.plusJakartaSans(
-                          color: Colors.black,
-                          fontSize: 8.0,
-                          fontWeight: FontWeight.w400),
-                    ),
-                  ),
-                  DataColumn(
-                    label: Text(
-                      'Action',
-                      style: GoogleFonts.plusJakartaSans(
-                          color: Colors.black,
-                          fontSize: 8.0,
-                          fontWeight: FontWeight.w400),
-                    ),
-                  ),
-                ],
-                rows: [
-                  DataRow(
-                    cells: [
-                      DataCell(
-                        Text(
-                          'Juan Dela Cruz',
+                    columnSpacing: 30.0,
+                    columns: [
+                      DataColumn(
+                        label: Text(
+                          'Customer Name',
                           style: GoogleFonts.plusJakartaSans(
                               color: Colors.black,
                               fontSize: 8.0,
                               fontWeight: FontWeight.w400),
                         ),
                       ),
-                      DataCell(
-                        Text(
-                          'Makati City',
+                      DataColumn(
+                        label: Text(
+                          'Address',
                           style: GoogleFonts.plusJakartaSans(
                               color: Colors.black,
                               fontSize: 8.0,
                               fontWeight: FontWeight.w400),
                         ),
                       ),
-                      DataCell(
-                        Text(
-                          '',
+                      DataColumn(
+                        label: Text(
+                          'Note',
                           style: GoogleFonts.plusJakartaSans(
                               color: Colors.black,
                               fontSize: 8.0,
                               fontWeight: FontWeight.w400),
                         ),
                       ),
-                      DataCell(
-                        Text(
-                          '₱1318.00',
+                      DataColumn(
+                        label: Text(
+                          'Balance',
                           style: GoogleFonts.plusJakartaSans(
                               color: Colors.black,
                               fontSize: 8.0,
                               fontWeight: FontWeight.w400),
                         ),
                       ),
-                      DataCell(
-                        Text(
-                          'Pending',
+                      DataColumn(
+                        label: Text(
+                          'Action',
                           style: GoogleFonts.plusJakartaSans(
                               color: Colors.black,
                               fontSize: 8.0,
@@ -371,98 +339,114 @@ class _SupplierInfoDashboard extends State<SupplierInfoDashboard> {
                         ),
                       ),
                     ],
-                  ),
-                  DataRow(
-                    cells: [
-                      DataCell(
-                        Text(
-                          'Juan Dela Cruz',
-                          style: GoogleFonts.plusJakartaSans(
-                              color: Colors.black,
-                              fontSize: 8.0,
-                              fontWeight: FontWeight.w400),
-                        ),
+                    rows: [
+                      DataRow(
+                        cells: [
+                          DataCell(
+                            Text(
+                              'Juan Dela Cruz',
+                              style: GoogleFonts.plusJakartaSans(
+                                  color: Colors.black,
+                                  fontSize: 8.0,
+                                  fontWeight: FontWeight.w400),
+                            ),
+                          ),
+                          DataCell(
+                            Text(
+                              'Makati City',
+                              style: GoogleFonts.plusJakartaSans(
+                                  color: Colors.black,
+                                  fontSize: 8.0,
+                                  fontWeight: FontWeight.w400),
+                            ),
+                          ),
+                          DataCell(
+                            Text(
+                              '',
+                              style: GoogleFonts.plusJakartaSans(
+                                  color: Colors.black,
+                                  fontSize: 8.0,
+                                  fontWeight: FontWeight.w400),
+                            ),
+                          ),
+                          DataCell(
+                            Text(
+                              '₱1318.00',
+                              style: GoogleFonts.plusJakartaSans(
+                                  color: Colors.black,
+                                  fontSize: 8.0,
+                                  fontWeight: FontWeight.w400),
+                            ),
+                          ),
+                          DataCell(
+                            Text(
+                              'Pending',
+                              style: GoogleFonts.plusJakartaSans(
+                                  color: Colors.black,
+                                  fontSize: 8.0,
+                                  fontWeight: FontWeight.w400),
+                            ),
+                          ),
+                        ],
                       ),
-                      DataCell(
-                        Text(
-                          'Makati City',
-                          style: GoogleFonts.plusJakartaSans(
-                              color: Colors.black,
-                              fontSize: 8.0,
-                              fontWeight: FontWeight.w400),
-                        ),
-                      ),
-                      DataCell(
-                        Text(
-                          '',
-                          style: GoogleFonts.plusJakartaSans(
-                              color: Colors.black,
-                              fontSize: 8.0,
-                              fontWeight: FontWeight.w400),
-                        ),
-                      ),
-                      DataCell(
-                        Text(
-                          '₱1318.00',
-                          style: GoogleFonts.plusJakartaSans(
-                              color: Colors.black,
-                              fontSize: 8.0,
-                              fontWeight: FontWeight.w400),
-                        ),
-                      ),
-                      DataCell(
-                        Text(
-                          'Pending',
-                          style: GoogleFonts.plusJakartaSans(
-                              color: Colors.black,
-                              fontSize: 8.0,
-                              fontWeight: FontWeight.w400),
-                        ),
+                      DataRow(
+                        cells: [
+                          DataCell(
+                            Text(
+                              'Juan Dela Cruz',
+                              style: GoogleFonts.plusJakartaSans(
+                                  color: Colors.black,
+                                  fontSize: 8.0,
+                                  fontWeight: FontWeight.w400),
+                            ),
+                          ),
+                          DataCell(
+                            Text(
+                              'Makati City',
+                              style: GoogleFonts.plusJakartaSans(
+                                  color: Colors.black,
+                                  fontSize: 8.0,
+                                  fontWeight: FontWeight.w400),
+                            ),
+                          ),
+                          DataCell(
+                            Text(
+                              '',
+                              style: GoogleFonts.plusJakartaSans(
+                                  color: Colors.black,
+                                  fontSize: 8.0,
+                                  fontWeight: FontWeight.w400),
+                            ),
+                          ),
+                          DataCell(
+                            Text(
+                              '₱1318.00',
+                              style: GoogleFonts.plusJakartaSans(
+                                  color: Colors.black,
+                                  fontSize: 8.0,
+                                  fontWeight: FontWeight.w400),
+                            ),
+                          ),
+                          DataCell(
+                            Text(
+                              'Pending',
+                              style: GoogleFonts.plusJakartaSans(
+                                  color: Colors.black,
+                                  fontSize: 8.0,
+                                  fontWeight: FontWeight.w400),
+                            ),
+                          ),
+                        ],
                       ),
                     ],
                   ),
-                ],
+                ),
               ),
             ),
-          ),
+          ],
         ),
         drawer: const NavigationDrawer(),
-        
       ),
-    );
-  }
-
-  // Function to toggle overlay visibility
-  void _toggleOverlay() {
-    if (_overlayEntry != null) {
-      _overlayEntry!.remove();
-      _overlayEntry = null;
-    } else {
-      _overlayEntry = _createOverlayEntry();
-      Overlay.of(context)?.insert(_overlayEntry!);
-    }
-  }
-
-  // Function to create the overlay
-  OverlayEntry _createOverlayEntry() {
-    return OverlayEntry(
-      builder: (context) {
-        return Stack(
-          children: [
-            // Background overlay with low opacity
-            Container(
-              color: Colors.black.withOpacity(0.3),
-              child: GestureDetector(
-                onTap: () {
-                  // Close the overlay when tapping on the background
-                  _toggleOverlay();
-                },
-              ),
-            ),
-            // Your overlay content here
-          ],
-        );
-      },
     );
   }
 }

@@ -1,49 +1,94 @@
-import 'package:flutter/material.dart';
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key});
-
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  OverlayEntry? _overlayEntry;
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Overlay Example'),
-      ),
-      body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            // Show overlay
-            _overlayEntry = _createOverlayEntry();
-            Overlay.of(context)?.insert(_overlayEntry!);
+return MaterialApp(
+  home: showAdditionalButton
+      ? GestureDetector(
+          onTap: () {
+            // Close the overlay when tapped outside
+            setState(() {
+              showAdditionalButton = false;
+              fabLabel = 'Add Item';
+            });
           },
-          child: Text('Show Overlay'),
-        ),
-      ),
-    );
-  }
-
-  OverlayEntry _createOverlayEntry() {
-    return OverlayEntry(
-      builder: (context) {
-        return Stack(
-          children: <Widget>[
-            Positioned.fill(
-              child: Container(
-                color: Colors.black
-                    .withOpacity(0.7), // Adjust the opacity and color as needed
-              ),
+          child: Container(
+            color: Colors.black.withOpacity(0.5), // Semi-transparent black
+            child: Scaffold(
+              body: YourContentWidget(), // Replace with your content widget
             ),
-            // You can add additional widgets on top of the overlay here.
-          ],
-        );
-      },
-    );
-  }
-}
+          ),
+        )
+      : Scaffold(
+          floatingActionButton: Stack(
+            children: [
+              Positioned(
+                bottom: 0,
+                right: 0,
+                child: Row(
+                  children: [
+                    Visibility(
+                      visible: showAdditionalButton,
+                      child: Text(
+                        'Add supplier manually',
+                        style: GoogleFonts.plusJakartaSans(
+                          color: Colors.black,
+                          fontSize: 10.0,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    ),
+                    SizedBox(width: 8.0),
+                    FloatingActionButton(
+                      onPressed: () {
+                        setState(() {
+                          showAdditionalButton = !showAdditionalButton;
+                          fabLabel = showAdditionalButton ? 'Close' : 'Add Item';
+                        });
+                      },
+                      child: showAdditionalButton
+                          ? Icon(Icons.people)
+                          : Icon(Icons.add),
+                      backgroundColor: const Color(0xFF2C3A76),
+                      tooltip: fabLabel,
+                    ),
+                  ],
+                ),
+              ),
+              if (showAdditionalButton)
+                Positioned(
+                  top: 560,
+                  right: 0,
+                  child: Row(
+                    children: [
+                      Text(
+                        'Import Supplier',
+                        style: GoogleFonts.plusJakartaSans(
+                          color: Colors.black,
+                          fontSize: 10.0,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      FloatingActionButton(
+                        onPressed: () {
+                          // Handle the additional FAB's onPressed action here
+                        },
+                        child: Icon(
+                          Icons.people,
+                          color: Colors.blue,
+                        ),
+                        backgroundColor: Colors.white,
+                        tooltip: 'Additional FAB',
+                      ),
+                    ],
+                  ),
+                ),
+            ],
+          ),
+          backgroundColor: const Color(0xFFFFFBF2),
+          appBar: AppBar(
+            // ... Your app bar code ...
+          ),
+          body: YourContentWidget(), // Replace with your content widget
+          drawer: const NavigationDrawer(),
+        ),
+);
