@@ -47,7 +47,7 @@ class _SupplierInfoDashboard extends State<SupplierInfoDashboard> {
                     child: Text(
                       'Add supplier manually',
                       style: GoogleFonts.plusJakartaSans(
-                        color: Colors.black,
+                        color: Colors.white,
                         fontSize: 10.0,
                         fontWeight: FontWeight.w600,
                       ),
@@ -92,7 +92,7 @@ class _SupplierInfoDashboard extends State<SupplierInfoDashboard> {
                     Text(
                       'Import Supplier',
                       style: GoogleFonts.plusJakartaSans(
-                        color: Colors.black,
+                        color: Colors.white,
                         fontSize: 10.0,
                         fontWeight: FontWeight.w600,
                       ),
